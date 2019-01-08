@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+  <meta name="baidu-site-verification" content="PKKKaYhNc8">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="true">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2b44557d"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="true">
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="孙文正的Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前言Java8已经发布很久了，毫无疑问，这是继java5之后一次重大的版本升级，这个版本包含语言、编译器、库、工具和JVM等方面的十多个新特性。有人认为，虽然这些新特性领Java开发人员十分期待，但同时也需要花不少精力去学习。因此，本文综合了一些资料，整理成一份关于Java 8新特性的参考教材，希望你有所收获。本文中所用的实例请点击：Java8新特性实例">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java8十大新特性整理">
+<meta property="og:url" content="https://jsxzswz.github.io/2019/01/04/blog20181210/index.html">
+<meta property="og:site_name" content="孙文正的Blog">
+<meta property="og:description" content="前言Java8已经发布很久了，毫无疑问，这是继java5之后一次重大的版本升级，这个版本包含语言、编译器、库、工具和JVM等方面的十多个新特性。有人认为，虽然这些新特性领Java开发人员十分期待，但同时也需要花不少精力去学习。因此，本文综合了一些资料，整理成一份关于Java 8新特性的参考教材，希望你有所收获。本文中所用的实例请点击：Java8新特性实例">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-04T09:21:26.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java8十大新特性整理">
+<meta name="twitter:description" content="前言Java8已经发布很久了，毫无疑问，这是继java5之后一次重大的版本升级，这个版本包含语言、编译器、库、工具和JVM等方面的十多个新特性。有人认为，虽然这些新特性领Java开发人员十分期待，但同时也需要花不少精力去学习。因此，本文综合了一些资料，整理成一份关于Java 8新特性的参考教材，希望你有所收获。本文中所用的实例请点击：Java8新特性实例">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://jsxzswz.github.io/2019/01/04/blog20181210/">
+
+
+
+
+
+  <title>Java8十大新特性整理 | 孙文正的Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+     <a href="https://github.com/jsxzswz" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">孙文正的Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">天道酬勤</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jsxzswz.github.io/2019/01/04/blog20181210/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="孙文正">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙文正的Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java8十大新特性整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T17:21:26+08:00">
+                2019-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/01/04/blog20181210/" class="leancloud_visitors" data-flag-title="Java8十大新特性整理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数&#58;</span>
+                
+                <span title="本文字数">
+                  4.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java8已经发布很久了，毫无疑问，这是继java5之后一次重大的版本升级，这个版本包含语言、编译器、库、工具和JVM等方面的十多个新特性。有人认为，虽然这些新特性领Java开发人员十分期待，但同时也需要花不少精力去学习。因此，本文综合了一些资料，整理成一份关于Java 8新特性的参考教材，希望你有所收获。<br>本文中所用的实例请点击：<a href="https://github.com/jsxzswz/Java8Demo" target="_blank" rel="noopener">Java8新特性实例</a></p>
+<a id="more"></a>
+<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>Lambda表达式的语法格式如下：<br><code>(parameters)-&gt;expression</code> 或 <code>(parameters)-&gt;{statements;}</code></p>
+<p>以下是Lambda表达式的重要特征：</p>
+<ul>
+<li>可选类型声明：不需要声明参数类型，编译器可以统一识别参数值；</li>
+<li>可选参数圆括号：一个参数无需定义圆括号，但多个参数需要定义圆括号；</li>
+<li>可选的大括号：如果主体包含了一个语句，就不需要使用大括号；</li>
+<li>可选的返回关键字：如果主体只有一个返回值则编译器会自动返主体回值，大括号需要指定表达式返回一个数值。</li>
+</ul>
+<p>使用Lambda表达式需要注意以下两点：</p>
+<ul>
+<li>使用Lambda表达式主要用来定义执行行内执行的方法类型接口，例如，一个简单方法接口。在上面例子中，我们使用各种类型的Lambda表达式来定义MathOperation接口的方法，然后我们定义了sayMessage的执行。</li>
+<li>Lambda表达式免去了使用匿名方法的麻烦，并且给予Java简单但强大的函数化的编程能力。</li>
+</ul>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>注意点：</p>
+<ul>
+<li>Lambda表达式只能引用标记了 final 的外层局部变量，这就是说不能在lambda 内部修改定义在域外的局部变量，否则会编译错误。</li>
+<li>Lambda表达式的局部变量可以不用声明为 final，但是必须不可被后面的代码修改（即隐性的具有final 的语义）</li>
+<li>Lambda表达式当中不允许声明一个与局部变量同名的参数或者局部变量。</li>
+</ul>
+<h3 id="Lambda表达式实例"><a href="#Lambda表达式实例" class="headerlink" title="Lambda表达式实例"></a>Lambda表达式实例</h3><p>以下是Lambda的使用实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: Lambda测试</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/29 10:30</span><br><span class="line"> */</span><br><span class="line">public class LambdaTest &#123;</span><br><span class="line"></span><br><span class="line">    final static String salutation = &quot;Hello! &quot;;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        LambdaTest LambdaTest = new LambdaTest();</span><br><span class="line">        // 类型声明</span><br><span class="line">        MathOperation addition = (int a, int b) -&gt; a + b;</span><br><span class="line">        // 不用类型声明</span><br><span class="line">        MathOperation subtraction = (a, b) -&gt; a - b;</span><br><span class="line">        // 大括号中的返回值</span><br><span class="line">        MathOperation multiplication = (int a, int b) -&gt; &#123;</span><br><span class="line">            return a * b;</span><br><span class="line">        &#125;;</span><br><span class="line">        // 没有大括号及返回语句</span><br><span class="line">        MathOperation division = (int a, int b) -&gt; a / b;</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;10 + 5 = &quot; + LambdaTest.operate(10, 5, addition));</span><br><span class="line">        System.out.println(&quot;10 - 5 = &quot; + LambdaTest.operate(10, 5, subtraction));</span><br><span class="line">        System.out.println(&quot;10 x 5 = &quot; + LambdaTest.operate(10, 5, multiplication));</span><br><span class="line">        System.out.println(&quot;10 / 5 = &quot; + LambdaTest.operate(10, 5, division));</span><br><span class="line"></span><br><span class="line">        // 不用括号</span><br><span class="line">        GreetingService greetService1 = message -&gt; System.out.println(&quot;Hello &quot; + message);</span><br><span class="line">        // 用括号</span><br><span class="line">        GreetingService greetService2 = (message) -&gt; System.out.println(salutation + message);</span><br><span class="line"></span><br><span class="line">        greetService1.sayMessage(&quot;Runoob&quot;);</span><br><span class="line">        greetService2.sayMessage(&quot;Google&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    interface MathOperation &#123;</span><br><span class="line">        int operatation(int a, int b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    interface GreetingService &#123;</span><br><span class="line">        void sayMessage(String message);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private int operate(int a, int b, MathOperation mathOperation) &#123;</span><br><span class="line">        return mathOperation.operatation(a, b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java8方法引用"><a href="#Java8方法引用" class="headerlink" title="Java8方法引用"></a>Java8方法引用</h2><p>方法引用通过方法的名字来指向一个方法。<br>方法引用可以使语言的构造更紧凑简洁，减少冗余代码。<br>方法引用使用一对冒号 :: 。</p>
+<h3 id="方法引用实例"><a href="#方法引用实例" class="headerlink" title="方法引用实例"></a>方法引用实例</h3><p>以下是方法引用的使用实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: 方法引用</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/29 13:45</span><br><span class="line"> */</span><br><span class="line">public class MethodQuoteTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List names = new ArrayList&lt;&gt;();</span><br><span class="line">        names.add(&quot;Google&quot;);</span><br><span class="line">        names.add(&quot;SWZ&quot;);</span><br><span class="line">        names.add(&quot;taobao&quot;);</span><br><span class="line">        names.forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java8函数式接口"><a href="#Java8函数式接口" class="headerlink" title="Java8函数式接口"></a>Java8函数式接口</h2><p>函数式接口(FunctionalInterface)是一个有且仅有一个抽象方法，但可以有多个非抽象方法的接口。<br>函数式接口可以被隐式转换为Lambda表达式。<br>函数式接口可以现有的函数友好地支持Lambda。</p>
+<h3 id="函数式接口实例"><a href="#函数式接口实例" class="headerlink" title="函数式接口实例"></a>函数式接口实例</h3><p>Predicate <t> 接口是一个函数式接口，它接受一个输入参数 T，返回一个布尔值结果。<br>该接口包含多种默认方法来将Predicate组合成其他复杂的逻辑（比如：与，或，非）。<br>该接口用于测试对象是 true 或 false。</t></p>
+<p>以下是函数式接口的实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: 函数式接口</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/29 14:30</span><br><span class="line"> */</span><br><span class="line">public class FunctionalInterfaceTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List&lt;Integer&gt; list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);</span><br><span class="line">        Predicate&lt;Integer&gt; predicate = n -&gt; n % 2 == 0;</span><br><span class="line">        // 传递参数 n</span><br><span class="line">        System.out.print(&quot;输出所有偶数: &quot;);</span><br><span class="line">        eval(list, predicate);</span><br><span class="line">        Predicate&lt;Integer&gt; predicate2 = n -&gt; n &gt; 3;</span><br><span class="line">        System.out.print(&quot;\n输出大于3的所有数字: &quot;);</span><br><span class="line">        eval(list, predicate2 );</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void eval(List&lt;Integer&gt; list, Predicate&lt;Integer&gt; predicate) &#123;</span><br><span class="line">        for (Integer i : list) &#123;</span><br><span class="line">            if (predicate.test(i)) &#123;</span><br><span class="line">                System.out.print(i + &quot; &quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java8默认方法"><a href="#Java8默认方法" class="headerlink" title="Java8默认方法"></a>Java8默认方法</h2><ul>
+<li>简单说，默认方法就是接口可以有实现方法，而且不需要实现类去实现其方法;</li>
+<li>我们只需在方法名前面加个default关键字即可实现默认方法。</li>
+<li>默认方法是为了解决接口的修改与现有的实现不兼容的问题。</li>
+<li>另一个特性是接口可以声明（并且可以提供实现）静态方法</li>
+</ul>
+<h3 id="默认方法实例"><a href="#默认方法实例" class="headerlink" title="默认方法实例"></a>默认方法实例</h3><p>以下是默认方法的使用实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: 默认方法</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/29 15:01</span><br><span class="line"> */</span><br><span class="line">public class DefaultMethodTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Vehicle vehicle = new Car();</span><br><span class="line">        vehicle.print();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     interface Vehicle &#123;</span><br><span class="line">        default void print() &#123;</span><br><span class="line">            System.out.println(&quot;我是一辆车!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 静态方法</span><br><span class="line">        static void blowHorn() &#123;</span><br><span class="line">            System.out.println(&quot;按喇叭!!!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     interface FourWheeler &#123;</span><br><span class="line">        default void print() &#123;</span><br><span class="line">            System.out.println(&quot;我是一辆四轮车!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static class Car implements Vehicle, FourWheeler &#123;</span><br><span class="line"></span><br><span class="line">        //@Override</span><br><span class="line">        //public void print() &#123;</span><br><span class="line">        //    System.out.println(&quot;我是一辆四轮汽车!&quot;);</span><br><span class="line">        //&#125;</span><br><span class="line">        public void print() &#123;</span><br><span class="line">            Vehicle.super.print();</span><br><span class="line">            FourWheeler.super.print();</span><br><span class="line">            Vehicle.blowHorn();</span><br><span class="line">            System.out.println(&quot;我是一辆汽车!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java8-流Stream"><a href="#Java8-流Stream" class="headerlink" title="Java8 流Stream"></a>Java8 流Stream</h2><p>Stream使用一种类似用SQL语句从数据库查询数据的直观方式来提供一种对Java集合运算和表达的高阶抽象;<br>Stream API可以极大提高Java程序员的生产力，让程序员写出高效率、干净、简洁的代码;<br>这种风格将要处理的元素集合看作一种流，流在管道中传输，并且可以在管道的节点上进行处理，比如筛选，排序，聚合等;<br>元素流在管道中经过中间操作（intermediate operation）的处理，最后由最终操作(terminal operation)得到前面处理的结果。</p>
+<h3 id="什么是Stream"><a href="#什么是Stream" class="headerlink" title="什么是Stream"></a>什么是Stream</h3><p>Stream（流）是一个来自数据源的元素队列并支持聚合操作;</p>
+<ul>
+<li>元素：是特定类型的对象，形成一个队列。Java中的Stream并不会存储元素，而是按需计算;</li>
+<li>数据源 ：流的来源。可以是集合，数组，I/O channel，产生器generator等;</li>
+<li>聚合操作： 类似SQL语句一样的操作，比如filter, map, reduce, find,match, sorted等。</li>
+</ul>
+<h3 id="Stream流特征"><a href="#Stream流特征" class="headerlink" title="Stream流特征"></a>Stream流特征</h3><ul>
+<li>Pipelining:：中间操作都会返回流对象本身。这样多个操作可以串联成一个管道，如同流式风格（fluent style）。<br>这样做可以对操作进行优化，比如延迟执行(laziness)和短路( short-circuiting)。</li>
+<li>内部迭代：以前对集合遍历都是通过Iterator或者For-Each的方式,显式的在集合外部进行迭代，这叫做外部迭代。<br>Stream提供了内部迭代的方式，通过访问者模式(Visitor)实现。</li>
+</ul>
+<h3 id="Stream流实例"><a href="#Stream流实例" class="headerlink" title="Stream流实例"></a>Stream流实例</h3><p>以下是Stream流的使用实例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: 流Stream</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/29 15:17</span><br><span class="line"> */</span><br><span class="line">public class StreamTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        // stream() −为集合创建串行流。</span><br><span class="line">        // parallelStream() − 为集合创建并行流。</span><br><span class="line">        List&lt;String&gt; strings = Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">        List&lt;String&gt; filtered = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());</span><br><span class="line">        System.out.println(filtered);</span><br><span class="line"></span><br><span class="line">        // Stream 提供了新的方法 &apos;forEach&apos; 来迭代流中的每个数据。以下代码片段使用forEach 输出了10个随机数</span><br><span class="line">        // limit 方法用于获取指定数量的流。以下代码片段使用 limit 方法打印出 10 条数据</span><br><span class="line">        // sorted 方法用于对流进行排序。以下代码片段使用 sorted 方法对输出的 10 个随机数进行排序</span><br><span class="line">        Random random = new Random();</span><br><span class="line">        random.ints().limit(10).sorted().forEach(System.out::println);</span><br><span class="line"></span><br><span class="line">        // map 方法用于映射每个元素到对应的结果，以下代码片段使用 map 输出了元素对应的平方数：</span><br><span class="line">        List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 3, 4, 3, 5);</span><br><span class="line">        List&lt;Integer&gt; squaresList  = numbers.stream().map(i -&gt;i*i).distinct().collect(Collectors.toList());</span><br><span class="line">        System.out.println(squaresList);</span><br><span class="line"></span><br><span class="line">        // filter 方法用于通过设置条件过滤出元素。以下代码片段使用filter 方法过滤出空字符串：</span><br><span class="line">        List&lt;String&gt; strings2 = Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;abcd&quot;,&quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">        // 获取空字符串的数量</span><br><span class="line">        int count = (int) strings2.stream().filter(string -&gt; string.isEmpty()).count();</span><br><span class="line">        System.out.println(count);</span><br><span class="line"></span><br><span class="line">        // Collectors 类实现了很多归约操作，例如将流转换成集合和聚合元素。Collectors可用于返回列表或字符串：</span><br><span class="line">        List&lt;String&gt; strings3 = Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;abcd&quot;, &quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">        List&lt;String&gt; filtered3 = strings3.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());</span><br><span class="line">        System.out.println(&quot;筛选列表: &quot; + filtered3);</span><br><span class="line">        String mergedString = strings3.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.joining(&quot;, &quot;));</span><br><span class="line">        System.out.println(&quot;合并字符串: &quot; + mergedString);</span><br><span class="line">        // 一些产生统计结果的收集器也非常有用。它们主要用于int、double、long等基本类型上，它们可以用来产生类似如下的统计结果</span><br><span class="line">        List&lt;Integer&gt; numbers2 = Arrays.asList(3, 2, 2, 3, 7, 3, 5);</span><br><span class="line">        IntSummaryStatistics stats = numbers2.stream().mapToInt((x) -&gt; x).summaryStatistics();</span><br><span class="line">        System.out.println(&quot;列表中最大的数 : &quot; + stats.getMax());</span><br><span class="line">        System.out.println(&quot;列表中最小的数 : &quot; + stats.getMin());</span><br><span class="line">        System.out.println(&quot;所有数之和 : &quot; + stats.getSum());</span><br><span class="line">        System.out.println(&quot;平均数 : &quot; + stats.getAverage());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: 流Stream</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/29 16:02</span><br><span class="line"> */</span><br><span class="line">public class Stream2Test &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String args[]) &#123;</span><br><span class="line">        System.out.println(&quot;使用 Java 7: &quot;);</span><br><span class="line">        // 计算空字符串</span><br><span class="line">        List&lt;String&gt; strings = Arrays.asList(&quot;abc&quot;, &quot;&quot;, &quot;bc&quot;, &quot;efg&quot;, &quot;abcd&quot;, &quot;&quot;, &quot;jkl&quot;);</span><br><span class="line">        System.out.println(&quot;列表: &quot; + strings);</span><br><span class="line">        long count = getCountEmptyStringUsingJava7(strings);</span><br><span class="line">        System.out.println(&quot;空字符数量为: &quot; + count);</span><br><span class="line">        count = getCountLength3UsingJava7(strings);</span><br><span class="line">        System.out.println(&quot;字符串长度为 3 的数量为: &quot; + count);</span><br><span class="line">        // 删除空字符串</span><br><span class="line">        List&lt;String&gt; filtered = deleteEmptyStringsUsingJava7(strings);</span><br><span class="line">        System.out.println(&quot;筛选后的列表: &quot; + filtered);</span><br><span class="line">        // 删除空字符串，并使用逗号把它们合并起来</span><br><span class="line">        String mergedString = getMergedStringUsingJava7(strings, &quot;, &quot;);</span><br><span class="line">        System.out.println(&quot;合并字符串: &quot; + mergedString);</span><br><span class="line">        List&lt;Integer&gt; numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);</span><br><span class="line">        // 获取列表元素平方数</span><br><span class="line">        List&lt;Integer&gt; squaresList = getSquares(numbers);</span><br><span class="line">        System.out.println(&quot;平方数列表: &quot; + squaresList);</span><br><span class="line">        List&lt;Integer&gt; integers = Arrays.asList(1, 2, 13, 4, 15, 6, 17, 8, 19);</span><br><span class="line">        System.out.println(&quot;列表: &quot; + integers);</span><br><span class="line">        System.out.println(&quot;列表中最大的数 : &quot; + getMax(integers));</span><br><span class="line">        System.out.println(&quot;列表中最小的数 : &quot; + getMin(integers));</span><br><span class="line">        System.out.println(&quot;所有数之和 : &quot; + getSum(integers));</span><br><span class="line">        System.out.println(&quot;平均数 : &quot; + getAverage(integers));</span><br><span class="line">        System.out.println(&quot;随机数: &quot;);</span><br><span class="line">        // 输出10个随机数</span><br><span class="line">        Random random = new Random();</span><br><span class="line">        for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">            System.out.println(random.nextInt());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;使用 Java 8: &quot;);</span><br><span class="line">        System.out.println(&quot;列表: &quot; + strings);</span><br><span class="line">        count = strings.stream().filter(string -&gt; string.isEmpty()).count();</span><br><span class="line">        System.out.println(&quot;空字符串数量为: &quot; + count);</span><br><span class="line">        count = strings.stream().filter(string -&gt; string.length() == 3).count();</span><br><span class="line">        System.out.println(&quot;字符串长度为 3 的数量为: &quot; + count);</span><br><span class="line">        filtered = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());</span><br><span class="line">        System.out.println(&quot;筛选后的列表: &quot; + filtered);</span><br><span class="line">        mergedString = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.joining(&quot;, &quot;));</span><br><span class="line">        System.out.println(&quot;合并字符串: &quot; + mergedString);</span><br><span class="line">        squaresList = numbers.stream().map(i -&gt; i * i).distinct().collect(Collectors.toList());</span><br><span class="line">        System.out.println(&quot;Squares List: &quot; + squaresList);</span><br><span class="line">        System.out.println(&quot;列表: &quot; + integers);</span><br><span class="line">        IntSummaryStatistics stats = integers.stream().mapToInt((x) -&gt; x).summaryStatistics();</span><br><span class="line">        System.out.println(&quot;列表中最大的数 : &quot; + stats.getMax());</span><br><span class="line">        System.out.println(&quot;列表中最小的数 : &quot; + stats.getMin());</span><br><span class="line">        System.out.println(&quot;所有数之和 : &quot; + stats.getSum());</span><br><span class="line">        System.out.println(&quot;平均数 : &quot; + stats.getAverage());</span><br><span class="line">        System.out.println(&quot;随机数: &quot;);</span><br><span class="line">        random.ints().limit(10).sorted().forEach(System.out::println);</span><br><span class="line">        // 并行处理</span><br><span class="line">        count = strings.parallelStream().filter(string -&gt; string.isEmpty()).count();</span><br><span class="line">        System.out.println(&quot;空字符串的数量为: &quot; + count);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static int getCountEmptyStringUsingJava7(List&lt;String&gt; strings) &#123;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for (String string : strings) &#123;</span><br><span class="line">            if (string.isEmpty()) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static int getCountLength3UsingJava7(List&lt;String&gt; strings) &#123;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for (String string : strings) &#123;</span><br><span class="line">            if (string.length() == 3) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static List&lt;String&gt; deleteEmptyStringsUsingJava7(List&lt;String&gt; strings) &#123;</span><br><span class="line">        List&lt;String&gt; filteredList = new ArrayList&lt;String&gt;();</span><br><span class="line">        for (String string : strings) &#123;</span><br><span class="line">            if (!string.isEmpty()) &#123;</span><br><span class="line">                filteredList.add(string);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return filteredList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static String getMergedStringUsingJava7(List&lt;String&gt; strings, String separator) &#123;</span><br><span class="line">        StringBuilder stringBuilder = new StringBuilder();</span><br><span class="line">        for (String string : strings) &#123;</span><br><span class="line">            if (!string.isEmpty()) &#123;</span><br><span class="line">                stringBuilder.append(string);</span><br><span class="line">                stringBuilder.append(separator);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        String mergedString = stringBuilder.toString();</span><br><span class="line">        return mergedString.substring(0, mergedString.length() - 2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static List&lt;Integer&gt; getSquares(List&lt;Integer&gt; numbers) &#123;</span><br><span class="line">        List&lt;Integer&gt; squaresList = new ArrayList&lt;Integer&gt;();</span><br><span class="line">        for (Integer number : numbers) &#123;</span><br><span class="line">            Integer square = new Integer(number.intValue() * number.intValue());</span><br><span class="line">            if (!squaresList.contains(square)) &#123;</span><br><span class="line">                squaresList.add(square);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return squaresList;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static int getMax(List&lt;Integer&gt; numbers) &#123;</span><br><span class="line">        int max = numbers.get(0);</span><br><span class="line">        for (int i = 1; i &lt; numbers.size(); i++) &#123;</span><br><span class="line">            Integer number = numbers.get(i);</span><br><span class="line">            if (number.intValue() &gt; max) &#123;</span><br><span class="line">                max = number.intValue();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static int getMin(List&lt;Integer&gt; numbers) &#123;</span><br><span class="line">        int min = numbers.get(0);</span><br><span class="line">        for (int i = 1; i &lt; numbers.size(); i++) &#123;</span><br><span class="line">            Integer number = numbers.get(i);</span><br><span class="line">            if (number.intValue() &lt; min) &#123;</span><br><span class="line">                min = number.intValue();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return min;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static int getSum(List numbers) &#123;</span><br><span class="line">        int sum = (int) (numbers.get(0));</span><br><span class="line">        for (int i = 1; i &lt; numbers.size(); i++) &#123;</span><br><span class="line">            sum += (int) numbers.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static int getAverage(List&lt;Integer&gt; numbers) &#123;</span><br><span class="line">        return getSum(numbers) / numbers.size();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Java-8-Optional-类"><a href="#Java-8-Optional-类" class="headerlink" title="Java 8 Optional 类"></a>Java 8 Optional 类</h2><p>Optional类是一个可以为null的容器对象。如果值存在则isPresent()方法会返回true，调用get()方法会返回该对象；<br>Optional十个容器：它可以保存类型为T的值，或仅仅保存null；<br>Optional类的引入很好的解决空指针异常。</p>
+<h3 id="类声明"><a href="#类声明" class="headerlink" title="类声明"></a>类声明</h3><p>以下是一个 java.util.Optional<t> 类的声明：<br><code>publicfinalclassOptional&lt;T&gt; extendsObject</code></t></p>
+<h3 id="Optional实例"><a href="#Optional实例" class="headerlink" title="Optional实例"></a>Optional实例</h3><p>以下是Optional的使用实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: Optional类</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/30 11:25</span><br><span class="line"> */</span><br><span class="line">public class OptionalTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        OptionalTest optionalTest = new OptionalTest();</span><br><span class="line">        Integer value1 = null;</span><br><span class="line">        Integer value2 = new Integer(10);</span><br><span class="line">        // 允许传递为 null 参数</span><br><span class="line">        Optional&lt;Integer&gt; a = Optional.ofNullable(value1);</span><br><span class="line">        // 如果传递的参数是 null，抛出异常 NullPointerException</span><br><span class="line">        Optional&lt;Integer&gt; b = Optional.of(value2);</span><br><span class="line">        System.out.println(optionalTest.sum(a, b));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer sum(Optional&lt;Integer&gt; a, Optional&lt;Integer&gt; b) &#123;</span><br><span class="line">        // 判断值是否存在</span><br><span class="line">        System.out.println(&quot;第一个参数值存在： &quot; + a.isPresent());</span><br><span class="line">        System.out.println(&quot;第二个参数值存在： &quot; + b.isPresent());</span><br><span class="line">        // 如果值存在，返回它，否则返回默认值</span><br><span class="line">        Integer value1 = a.orElse(new Integer(0));</span><br><span class="line">        Integer value2 = b.get();</span><br><span class="line">        return value1 + value2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java8-Nashorn-JavaScript"><a href="#Java8-Nashorn-JavaScript" class="headerlink" title="Java8 Nashorn JavaScript"></a>Java8 Nashorn JavaScript</h2><ul>
+<li>Nashorn 一个 javascript 引擎。<br>从JDK1.8开始，Nashorn取代Rhino(JDK 1.6, JDK1.7)成为Java的嵌入式JavaScript引擎。Nashorn完全支持ECMAScript 5.1规范以及一些扩展。它使用基于JSR292的新语言特性，其中包含在JDK 7中引入的 invokedynamic，将JavaScript编译成Java字节码。与先前的Rhino实现相比，这带来了2到10倍的性能提升。</li>
+<li>jjs是个基于Nashorn引擎的命令行工具。它接受一些JavaScript源代码为参数，并且执行这些源代码</li>
+<li>使用ScriptEngineManager, JavaScript 代码可以在 Java 中执行</li>
+</ul>
+<h3 id="Nashorn实例"><a href="#Nashorn实例" class="headerlink" title="Nashorn实例"></a>Nashorn实例</h3><p>以下是Nashorn的使用实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: Nashorn, javascript 引擎。</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/30 14:11</span><br><span class="line"> */</span><br><span class="line">public class NashornTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        ScriptEngineManager scriptEngineManager = new ScriptEngineManager();</span><br><span class="line">        ScriptEngine nashorn = scriptEngineManager.getEngineByName(&quot;nashorn&quot;);</span><br><span class="line">        String name = &quot;Runoob&quot;;</span><br><span class="line">        Integer result = null;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            nashorn.eval(&quot;print(&apos;&quot; + name + &quot;&apos;)&quot;);</span><br><span class="line">            result = (Integer) nashorn.eval(&quot;10 + 2&quot;);</span><br><span class="line">        &#125; catch (ScriptException e) &#123;</span><br><span class="line">            System.out.println(&quot;执行脚本错误: &quot; + e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(result.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java8-日期时间API"><a href="#Java8-日期时间API" class="headerlink" title="Java8 日期时间API"></a>Java8 日期时间API</h2><p>在旧版的Java 中，日期时间API 存在诸多问题:</p>
+<ul>
+<li>非线程安全 − java.util.Date 是非线程安全的，所有的日期类都是可变的，这是Java日期类最大的问题之一;</li>
+<li>设计很差 − Java的日期/时间类的定义并不一致，在java.util和java.sql的包中都有日期类;</li>
+<li>时区处理麻烦 − 日期类并不提供国际化，没有时区支持;</li>
+</ul>
+<p>Java 8 在 java.time 包下提供了很多新的 API:</p>
+<ul>
+<li>Local(本地) − 简化了日期时间的处理，没有时区的问题;</li>
+<li>Zoned(时区) − 通过制定的时区处理日期时间;</li>
+<li>新的java.time包涵盖了所有处理日期，时间，日期/时间，时区，时刻（instants），过程（during）与时钟（clock）的操作.</li>
+</ul>
+<h3 id="日期时间实例"><a href="#日期时间实例" class="headerlink" title="日期时间实例"></a>日期时间实例</h3><p>以下是日期时间的使用实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: 日期时间API</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/30 14:23</span><br><span class="line"> */</span><br><span class="line">public class DateTimeTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        // LocalDate/LocalTime 和 LocalDateTime 类可以在处理时区不是必须的情况</span><br><span class="line">        DateTimeTest dateTimeTest = new DateTimeTest();</span><br><span class="line">        dateTimeTest.testLocalDateTime();</span><br><span class="line">        // 如果我们需要考虑到时区，就可以使用时区的日期时间API</span><br><span class="line">        dateTimeTest.testZonedDateTime();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void testLocalDateTime() &#123;</span><br><span class="line">        // 获取当前的日期时间</span><br><span class="line">        LocalDateTime localDateTime = LocalDateTime.now();</span><br><span class="line">        System.out.println(&quot;当前时间：&quot; + localDateTime);</span><br><span class="line">        LocalDate localDate = localDateTime.toLocalDate();</span><br><span class="line">        System.out.println(&quot;localDate:&quot; + localDate);</span><br><span class="line">        Month month = localDateTime.getMonth();</span><br><span class="line">        int day = localDateTime.getDayOfMonth();</span><br><span class="line">        int hours = localDateTime.getHour();</span><br><span class="line">        int minutes = localDateTime.getMinute();</span><br><span class="line">        int seconds = localDateTime.getSecond();</span><br><span class="line">        System.out.println(&quot;月：&quot; + month + &quot;,日: &quot; + day + &quot;,时：&quot; + hours + &quot;,分：&quot; + minutes + &quot;,秒: &quot; + seconds);</span><br><span class="line"></span><br><span class="line">        LocalDateTime localDateTime1 = localDateTime.withDayOfMonth(10).withYear(2018);</span><br><span class="line">        System.out.println(&quot;localDateTime1:&quot; + localDateTime1);</span><br><span class="line">        // 2018-11-28</span><br><span class="line">        LocalDate localDate1 = LocalDate.of(2018, Month.NOVEMBER, 28);</span><br><span class="line">        System.out.println(&quot;localDate1:&quot; + localDate1);</span><br><span class="line">        // 22:35</span><br><span class="line">        LocalTime localTime = LocalTime.of(22, 30);</span><br><span class="line">        System.out.println(&quot;localTime:&quot; + localTime);</span><br><span class="line">        // 解析字符串</span><br><span class="line">        LocalTime localTime1 = LocalTime.parse(&quot;22:35:24&quot;);</span><br><span class="line">        System.out.println(&quot;localTime1&quot; + localTime1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void testZonedDateTime() &#123;</span><br><span class="line">        // 获取当前时间日期</span><br><span class="line">        ZonedDateTime date1 = ZonedDateTime.parse(&quot;2015-12-03T10:15:30+05:30[Asia/Shanghai]&quot;);</span><br><span class="line">        System.out.println(&quot;date1: &quot; + date1);</span><br><span class="line">        ZoneId id = ZoneId.of(&quot;Europe/Paris&quot;);</span><br><span class="line">        System.out.println(&quot;ZoneId: &quot; + id);</span><br><span class="line">        ZoneId currentZone = ZoneId.systemDefault();</span><br><span class="line">        System.out.println(&quot;当期时区: &quot; + currentZone);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Java8-Base64"><a href="#Java8-Base64" class="headerlink" title="Java8 Base64"></a>Java8 Base64</h2><p>Base64编码已经成为Java类库的标准；<br>Java8 内置了 Base64 编码的编码器和解码器<br>Base64工具类提供了一套静态方法获取下面三种BASE64编解码器：</p>
+<ul>
+<li>基本：输出被映射到一组字符A-Za-z0-9+/，编码不添加任何行标，输出的解码仅支持A-Za-z0-9+/;</li>
+<li>URL：输出映射到一组字符A-Za-z0-9+_，输出是URL和文件;</li>
+<li>MIME：输出隐射到MIME友好格式。输出每行不超过76字符，并且使用’\r’并跟随’\n’作为分割。编码输出最后没有行分割</li>
+</ul>
+<h3 id="Base64实例"><a href="#Base64实例" class="headerlink" title="Base64实例"></a>Base64实例</h3><p>以下是Base64的使用实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: Base64编码</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/30 14:56</span><br><span class="line"> */</span><br><span class="line">public class Base64Test &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">            // 使用基本编码</span><br><span class="line">            String base64encodedString = Base64.getEncoder().encodeToString(&quot;runoob?java8&quot;.getBytes(&quot;utf-8&quot;));</span><br><span class="line">            System.out.println(&quot;Base64编码字符串(基本)：&quot; + base64encodedString);</span><br><span class="line">            // 解码</span><br><span class="line">            byte[] base64decodedBytes = Base64.getDecoder().decode(base64encodedString);</span><br><span class="line">            System.out.println(&quot;原始字符串: &quot; + new String(base64decodedBytes, &quot;utf-8&quot;));</span><br><span class="line">            // 使用URL编码</span><br><span class="line">            base64encodedString = Base64.getUrlEncoder().encodeToString(&quot;TutorialsPoint?java8&quot;.getBytes(&quot;utf-8&quot;));</span><br><span class="line">            System.out.println(&quot;Base64 编码字符串 (URL) :&quot; + base64encodedString);</span><br><span class="line">            // 使用MIME编码</span><br><span class="line">            StringBuilder stringBuilder = new StringBuilder();</span><br><span class="line">            for (int i = 0; i &lt; 10; ++i) &#123;</span><br><span class="line">                stringBuilder.append(UUID.randomUUID().toString());</span><br><span class="line">            &#125;</span><br><span class="line">            byte[] mimeBytes = stringBuilder.toString().getBytes(&quot;utf-8&quot;);</span><br><span class="line">            String mimeEncodedString = Base64.getMimeEncoder().encodeToString(mimeBytes);</span><br><span class="line">            System.out.println(&quot;Base64 编码字符串 (MIME) :&quot; + mimeEncodedString);</span><br><span class="line">        &#125; catch (UnsupportedEncodingException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="重复注解-RepeatingAnnotationTest"><a href="#重复注解-RepeatingAnnotationTest" class="headerlink" title="重复注解-RepeatingAnnotationTest"></a>重复注解-RepeatingAnnotationTest</h2><p>以下是重复注解的使用实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Package: com.swz</span><br><span class="line"> * @Description: 重复注解，拓宽注解的应用场景</span><br><span class="line"> * @author: swz</span><br><span class="line"> * @date: 2018/11/30 15:18</span><br><span class="line"> */</span><br><span class="line">public class RepeatingAnnotationTest &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for( Filter filter: Filterable.class.getAnnotationsByType( Filter.class ) ) &#123;</span><br><span class="line">            System.out.println( filter.value() );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Target( ElementType.TYPE )</span><br><span class="line">    @Retention( RetentionPolicy.RUNTIME )</span><br><span class="line">    public @interface Filters &#123;</span><br><span class="line">        Filter[] value();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Target( ElementType.TYPE )</span><br><span class="line">    @Retention( RetentionPolicy.RUNTIME )</span><br><span class="line">    @Repeatable( Filters.class )</span><br><span class="line">    public @interface Filter &#123;</span><br><span class="line">        String value();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Filter( &quot;filter1&quot; )</span><br><span class="line">    @Filter( &quot;filter2&quot; )</span><br><span class="line">    public interface Filterable &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/01/04/blog20181210/">Java8十大新特性整理</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
+  <p><span>发布时间:</span>2019年01月04日 - 17:01</p>
+  <p><span>最后更新:</span>2019年01月04日 - 17:01</p>
+  <p><span>原始链接:</span><a href="/2019/01/04/blog20181210/" title="Java8十大新特性整理">https://jsxzswz.github.io/2019/01/04/blog20181210/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/01/04/blog20181210/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="孙文正 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="孙文正 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/04/blog20181207/" rel="next" title="Mysql常用函数">
+                <i class="fa fa-chevron-left"></i> Mysql常用函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/04/blog20181211/" rel="prev" title="IDEA安装教程">
+                IDEA安装教程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTQ5My8xODA0MA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="孙文正">
+            
+              <p class="site-author-name" itemprop="name">孙文正</p>
+              <p class="site-description motion-element" itemprop="description">孙文正的Blog，主要涉及web知识共享以及前沿技术共同学习等方面</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jsxzswz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:js_swz2008@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.chuangzaoshi.com/code" title="创造狮导航" target="_blank">创造狮导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="V2EX" target="_blank">V2EX</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="印记中文" target="_blank">印记中文</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda表达式"><span class="nav-number">2.</span> <span class="nav-text">Lambda表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">2.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量作用域"><span class="nav-number">2.2.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lambda表达式实例"><span class="nav-number">2.3.</span> <span class="nav-text">Lambda表达式实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java8方法引用"><span class="nav-number">3.</span> <span class="nav-text">Java8方法引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法引用实例"><span class="nav-number">3.1.</span> <span class="nav-text">方法引用实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java8函数式接口"><span class="nav-number">4.</span> <span class="nav-text">Java8函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式接口实例"><span class="nav-number">4.1.</span> <span class="nav-text">函数式接口实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java8默认方法"><span class="nav-number">5.</span> <span class="nav-text">Java8默认方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认方法实例"><span class="nav-number">5.1.</span> <span class="nav-text">默认方法实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java8-流Stream"><span class="nav-number">6.</span> <span class="nav-text">Java8 流Stream</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Stream"><span class="nav-number">6.1.</span> <span class="nav-text">什么是Stream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream流特征"><span class="nav-number">6.2.</span> <span class="nav-text">Stream流特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream流实例"><span class="nav-number">6.3.</span> <span class="nav-text">Stream流实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-8-Optional-类"><span class="nav-number">7.</span> <span class="nav-text">Java 8 Optional 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类声明"><span class="nav-number">7.1.</span> <span class="nav-text">类声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optional实例"><span class="nav-number">7.2.</span> <span class="nav-text">Optional实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java8-Nashorn-JavaScript"><span class="nav-number">8.</span> <span class="nav-text">Java8 Nashorn JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nashorn实例"><span class="nav-number">8.1.</span> <span class="nav-text">Nashorn实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java8-日期时间API"><span class="nav-number">9.</span> <span class="nav-text">Java8 日期时间API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日期时间实例"><span class="nav-number">9.1.</span> <span class="nav-text">日期时间实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java8-Base64"><span class="nav-number">10.</span> <span class="nav-text">Java8 Base64</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Base64实例"><span class="nav-number">10.1.</span> <span class="nav-text">Base64实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复注解-RepeatingAnnotationTest"><span class="nav-number">11.</span> <span class="nav-text">重复注解-RepeatingAnnotationTest</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">孙文正</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">全站字数&#58;</span>
+    
+    <span title="全站字数">10.7k</span>
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+ -->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("PaXFroOi8Tibftz4umNgibPA-gzGzoHsz", "HzTvnDcJtFYtRCoquz9eqGje");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 15384,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
