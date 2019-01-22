@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jsxzswz.github.io/"/>
-  <updated>2019-01-14T09:01:27.944Z</updated>
+  <updated>2019-01-22T02:42:14.225Z</updated>
   <id>https://jsxzswz.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL(解压版)安装教程</title>
+    <link href="https://jsxzswz.github.io/2019/01/21/blog20190121/"/>
+    <id>https://jsxzswz.github.io/2019/01/21/blog20190121/</id>
+    <published>2019-01-21T08:36:36.742Z</published>
+    <updated>2019-01-22T02:42:14.225Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL数据库系统使用最常用的数据库管理语言–结构化查询语言（SQL）进行数据库管理。由于MySQL是开放源代码的，因此任何人都可以在General Public License的许可下下载并根据个性化的需要对其进行修改。MySQL因为其速度、可靠性和适应性而备受关注。大多数人都认为在不需要事务化处理的情况下，MySQL是管理内容最好的选择。</p><a id="more"></a><h2 id="MySQL安装"><a href="#MySQL安装" class="headerlink" title="MySQL安装"></a>MySQL安装</h2><p>MySQL分为安装版和解压版，个人推荐解压版MySQL，详细步骤如下：</p><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>访问地址<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">MySQL官网下载地址</a>，目前最新版是8.0.13。如果你不想下载最新版，想下载以前的版本，可以点击如下图的链接进行下载：</p><p><img src="/images/mysql1.png" alt="MySQL" title="MySQL 8.0.13"></p><p>根据你的系统（32位或者64位）选择后缀是ZIP Archive的压缩包下载到本地，这里我选择的是5.7.21版本，如图：</p><p><img src="/images/mysql2.png" alt="MySQL" title="MySQL 5.7.21压缩包"></p><p>点击Download进入下载页，这里要求你注册登陆, 不用管直接点击<b>No thanks, just start my download</b>， 按钮进行下载，如下图所示：</p><p><img src="/images/mysql3.png" alt="MySQL" title="MySQL 5.7.21下载"></p><h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p>选择一个路径（建议将常用的工具分类放在同一文件夹如D:\MySQL）解压压缩包。</p><h3 id="配置my-ini"><a href="#配置my-ini" class="headerlink" title="配置my.ini"></a>配置my.ini</h3><p>需要新建一个my.ini文件，在my.ini文件中添加如下信息：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line">#设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">#设置3306端口</span><br><span class="line">port=3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir=D:\MySQL\mysql-5.7.21-winx64</span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir=D:\MySQL\mysql-5.7.21-winx64\data</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections=200</span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line">character-set-server=utf8</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine=INNODB</span><br></pre></td></tr></table></figure><h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><ul><li>右键计算机–属性–高级系统设置–环境变量，新建系统变量<b>MySQL_HOME</b>，添加MySQL解压的目录（我这里是D:\MySQL\mysql-5.7.21-winx64）；</li><li>在系统变量中找到Path编辑，在结尾处追加<b>%MySQL_HOME%\bin;</b>，如果原变量值结尾没有分号，需要先加分号。如下图所示：</li></ul><p><img src="/images/env_var1.png" alt="环境变量" title="MySQL_HOME环境变量"></p><p><img src="/images/env_var2.png" alt="环境变量" title="PATH环境变量"></p><p>配置环境变量后启动MySQL就不必到MySQL的bin目录下启动了，直接在cmd中直接输入<b>net start mysql</b> 启动服务了。</p><h3 id="初始化MySQL"><a href="#初始化MySQL" class="headerlink" title="初始化MySQL"></a>初始化MySQL</h3><p>win7用户使用<b>window+R</b>（更高系统版本需要搜索程序cmd右键以管理员身份运行）以管理员身份运行cmd，依次输入命令<code>d:</code>，<code>cd D:\MySQL\mysql-5.7.21-winx64\bin</code>进入MySQL的bin目录，执行<code>mysqld --initialize</code>进行初始化，此时你的MySQL根目录下会生成一个data文件夹，如下图所示：</p><p><img src="/images/cmd.png" alt="命令窗口" title="cmd窗口"></p><p><img src="/images/fm.png" alt="文件管理器" title="FM文件管理"></p><h3 id="安装启动MySQL服务"><a href="#安装启动MySQL服务" class="headerlink" title="安装启动MySQL服务"></a>安装启动MySQL服务</h3><p>还是在bin路径下输入：<code>mysqld install</code>，此时会提示服务安装成功。至此，MySQL（解压版）安装成功！<br>直接在cmd中输入：<code>net start mysql</code>，提示服务启动成功。</p><h3 id="登录MySQL"><a href="#登录MySQL" class="headerlink" title="登录MySQL"></a>登录MySQL</h3><p>cmd输入：<code>mysql -u root -p</code>,这时会提示你输入密码。打开MySQL根目录下的data文件夹，找到后缀是.err的文件以文本打开找到password临时密码（可以ctrl+f搜索）然后在cmd中输入该临时密码。当cmd出现下图信息则代表登录成功。</p><p><img src="/images/temp_pwd.png" alt="临时密码" title="root临时密码"></p><p><img src="/images/login.png" alt="登陆MySQL" title="登陆MySQL"></p><h3 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h3><p>在上述的mysql&gt;后输入：<code>set password for 用户名@localhost = password(&#39;新密码&#39;);</code>，用户名一般是root，并设置新密码，如图所示：</p><p><img src="/images/update_pwd.png" alt="修改密码" title="password修改"></p><h3 id="停止服务"><a href="#停止服务" class="headerlink" title="停止服务"></a>停止服务</h3><p>cmd输入：<code>net stop mysql</code>，提示服务已成功停止。</p><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>好了，到这里MySQL就已经安装完成了，祝大家顺利安装！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL数据库系统使用最常用的数据库管理语言–结构化查询语言（SQL）进行数据库管理。由于MySQL是开放源代码的，因此任何人都可以在General Public License的许可下下载并根据个性化的需要对其进行修改。MySQL因为其速度、可靠性和适应性而备受关注。大多数人都认为在不需要事务化处理的情况下，MySQL是管理内容最好的选择。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://jsxzswz.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>MySQL数据类型介绍</title>

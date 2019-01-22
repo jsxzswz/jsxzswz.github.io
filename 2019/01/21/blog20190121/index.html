@@ -112,16 +112,28 @@
 
 
 
-<meta name="description" content="孙文正的Blog，主要涉及web知识共享以及前沿技术共同学习等方面">
-<meta property="og:type" content="website">
-<meta property="og:title" content="孙文正的Blog">
-<meta property="og:url" content="https://jsxzswz.github.io/page/3/index.html">
+<meta name="description" content="前言MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL数据库系统使用最常用的数据库管理语言–结构化查询语言（SQL）进行数据库管理。由于MySQL是开放源代码的，因此任何人都可以在General Public License的许可下下载并根据个性化的需要对其进行修改。MySQL因为其速度、可靠性和适应性而备受关注。大多数人都认为在不需要事务化处理的情况下，MySQL是管理内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL(解压版)安装教程">
+<meta property="og:url" content="https://jsxzswz.github.io/2019/01/21/blog20190121/index.html">
 <meta property="og:site_name" content="孙文正的Blog">
-<meta property="og:description" content="孙文正的Blog，主要涉及web知识共享以及前沿技术共同学习等方面">
+<meta property="og:description" content="前言MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL数据库系统使用最常用的数据库管理语言–结构化查询语言（SQL）进行数据库管理。由于MySQL是开放源代码的，因此任何人都可以在General Public License的许可下下载并根据个性化的需要对其进行修改。MySQL因为其速度、可靠性和适应性而备受关注。大多数人都认为在不需要事务化处理的情况下，MySQL是管理内">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://jsxzswz.github.io/images/mysql1.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/mysql2.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/mysql3.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/env_var1.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/env_var2.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/cmd.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/fm.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/temp_pwd.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/login.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/update_pwd.png">
+<meta property="og:updated_time" content="2019-01-22T02:42:14.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="孙文正的Blog">
-<meta name="twitter:description" content="孙文正的Blog，主要涉及web知识共享以及前沿技术共同学习等方面">
+<meta name="twitter:title" content="MySQL(解压版)安装教程">
+<meta name="twitter:description" content="前言MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL数据库系统使用最常用的数据库管理语言–结构化查询语言（SQL）进行数据库管理。由于MySQL是开放源代码的，因此任何人都可以在General Public License的许可下下载并根据个性化的需要对其进行修改。MySQL因为其速度、可靠性和适应性而备受关注。大多数人都认为在不需要事务化处理的情况下，MySQL是管理内">
+<meta name="twitter:image" content="https://jsxzswz.github.io/images/mysql1.png">
 
 
 
@@ -151,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="https://jsxzswz.github.io/page/3/">
+  <link rel="canonical" href="https://jsxzswz.github.io/2019/01/21/blog20190121/">
 
 
 
 
 
-  <title>孙文正的Blog</title>
+  <title>MySQL(解压版)安装教程 | 孙文正的Blog</title>
   
 
 
@@ -176,8 +188,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
      <a href="https://github.com/jsxzswz" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
@@ -323,9 +334,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -338,7 +349,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jsxzswz.github.io/2019/01/04/blog20181207/">
+    <link itemprop="mainEntityOfPage" href="https://jsxzswz.github.io/2019/01/21/blog20190121/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="孙文正">
@@ -355,9 +366,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/04/blog20181207/" itemprop="url">Mysql常用函数</a></h1>
+          <h1 class="post-title" itemprop="name headline">MySQL(解压版)安装教程</h1>
         
 
         <div class="post-meta">
@@ -369,8 +378,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T17:21:26+08:00">
-                2019-01-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-21T16:36:36+08:00">
+                2019-01-21
               </time>
             
 
@@ -409,7 +418,7 @@
 
           
           
-             <span id="/2019/01/04/blog20181207/" class="leancloud_visitors" data-flag-title="Mysql常用函数">
+             <span id="/2019/01/21/blog20190121/" class="leancloud_visitors" data-flag-title="MySQL(解压版)安装教程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -435,7 +444,7 @@
                   <span class="post-meta-item-text">本文字数&#58;</span>
                 
                 <span title="本文字数">
-                  1k
+                  926
                 </span>
               
 
@@ -451,7 +460,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -472,16 +481,37 @@
       
 
       
-        
-          <h2 id="文章描述"><a href="#文章描述" class="headerlink" title="文章描述"></a>文章描述</h2><p> MySQL数据库中提供了很丰富的函数。MySQL函数包括数学函数、字符串函数、日期和时间函数、条件判断函数、系统信息函数、加密函数、格式化函数等。通过这些函数，可以简化用户的操作。以下是对mysql中的常用函数进行了汇总介绍，需要的朋友可以过来参考下。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/04/blog20181207/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MySQL是一种开放源代码的关系型数据库管理系统（RDBMS），MySQL数据库系统使用最常用的数据库管理语言–结构化查询语言（SQL）进行数据库管理。由于MySQL是开放源代码的，因此任何人都可以在General Public License的许可下下载并根据个性化的需要对其进行修改。MySQL因为其速度、可靠性和适应性而备受关注。大多数人都认为在不需要事务化处理的情况下，MySQL是管理内容最好的选择。</p>
+<a id="more"></a>
+<h2 id="MySQL安装"><a href="#MySQL安装" class="headerlink" title="MySQL安装"></a>MySQL安装</h2><p>MySQL分为安装版和解压版，个人推荐解压版MySQL，详细步骤如下：</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>访问地址<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">MySQL官网下载地址</a>，目前最新版是8.0.13。如果你不想下载最新版，想下载以前的版本，可以点击如下图的链接进行下载：</p>
+<p><img src="/images/mysql1.png" alt="MySQL" title="MySQL 8.0.13"></p>
+<p>根据你的系统（32位或者64位）选择后缀是ZIP Archive的压缩包下载到本地，这里我选择的是5.7.21版本，如图：</p>
+<p><img src="/images/mysql2.png" alt="MySQL" title="MySQL 5.7.21压缩包"></p>
+<p>点击Download进入下载页，这里要求你注册登陆, 不用管直接点击<b>No thanks, just start my download</b>， 按钮进行下载，如下图所示：</p>
+<p><img src="/images/mysql3.png" alt="MySQL" title="MySQL 5.7.21下载"></p>
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p>选择一个路径（建议将常用的工具分类放在同一文件夹如D:\MySQL）解压压缩包。</p>
+<h3 id="配置my-ini"><a href="#配置my-ini" class="headerlink" title="配置my.ini"></a>配置my.ini</h3><p>需要新建一个my.ini文件，在my.ini文件中添加如下信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line">#设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">#设置3306端口</span><br><span class="line">port=3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir=D:\MySQL\mysql-5.7.21-winx64</span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir=D:\MySQL\mysql-5.7.21-winx64\data</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections=200</span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line">character-set-server=utf8</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine=INNODB</span><br></pre></td></tr></table></figure>
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><ul>
+<li>右键计算机–属性–高级系统设置–环境变量，新建系统变量<b>MySQL_HOME</b>，添加MySQL解压的目录（我这里是D:\MySQL\mysql-5.7.21-winx64）；</li>
+<li>在系统变量中找到Path编辑，在结尾处追加<b>%MySQL_HOME%\bin;</b>，如果原变量值结尾没有分号，需要先加分号。如下图所示：</li>
+</ul>
+<p><img src="/images/env_var1.png" alt="环境变量" title="MySQL_HOME环境变量"></p>
+<p><img src="/images/env_var2.png" alt="环境变量" title="PATH环境变量"></p>
+<p>配置环境变量后启动MySQL就不必到MySQL的bin目录下启动了，直接在cmd中直接输入<b>net start mysql</b> 启动服务了。</p>
+<h3 id="初始化MySQL"><a href="#初始化MySQL" class="headerlink" title="初始化MySQL"></a>初始化MySQL</h3><p>win7用户使用<b>window+R</b>（更高系统版本需要搜索程序cmd右键以管理员身份运行）以管理员身份运行cmd，依次输入命令<code>d:</code>，<code>cd D:\MySQL\mysql-5.7.21-winx64\bin</code>进入MySQL的bin目录，执行<code>mysqld --initialize</code>进行初始化，此时你的MySQL根目录下会生成一个data文件夹，如下图所示：</p>
+<p><img src="/images/cmd.png" alt="命令窗口" title="cmd窗口"></p>
+<p><img src="/images/fm.png" alt="文件管理器" title="FM文件管理"></p>
+<h3 id="安装启动MySQL服务"><a href="#安装启动MySQL服务" class="headerlink" title="安装启动MySQL服务"></a>安装启动MySQL服务</h3><p>还是在bin路径下输入：<code>mysqld install</code>，此时会提示服务安装成功。至此，MySQL（解压版）安装成功！<br>直接在cmd中输入：<code>net start mysql</code>，提示服务启动成功。</p>
+<h3 id="登录MySQL"><a href="#登录MySQL" class="headerlink" title="登录MySQL"></a>登录MySQL</h3><p>cmd输入：<code>mysql -u root -p</code>,这时会提示你输入密码。打开MySQL根目录下的data文件夹，找到后缀是.err的文件以文本打开找到password临时密码（可以ctrl+f搜索）然后在cmd中输入该临时密码。当cmd出现下图信息则代表登录成功。</p>
+<p><img src="/images/temp_pwd.png" alt="临时密码" title="root临时密码"></p>
+<p><img src="/images/login.png" alt="登陆MySQL" title="登陆MySQL"></p>
+<h3 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h3><p>在上述的mysql&gt;后输入：<code>set password for 用户名@localhost = password(&#39;新密码&#39;);</code>，用户名一般是root，并设置新密码，如图所示：</p>
+<p><img src="/images/update_pwd.png" alt="修改密码" title="password修改"></p>
+<h3 id="停止服务"><a href="#停止服务" class="headerlink" title="停止服务"></a>停止服务</h3><p>cmd输入：<code>net stop mysql</code>，提示服务已成功停止。</p>
+<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>好了，到这里MySQL就已经安装完成了，祝大家顺利安装！</p>
+
       
     </div>
     
@@ -490,14 +520,81 @@
 
     <div>
       
+        <div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+
+      
     </div>
 
     <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/01/21/blog20190121/">MySQL(解压版)安装教程</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
+  <p><span>发布时间:</span>2019年01月21日 - 16:01</p>
+  <p><span>最后更新:</span>2019年01月22日 - 10:01</p>
+  <p><span>原始链接:</span><a href="/2019/01/21/blog20190121/" title="MySQL(解压版)安装教程">https://jsxzswz.github.io/2019/01/21/blog20190121/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/01/21/blog20190121/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
       
     </div>
 
     
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="孙文正 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="孙文正 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
@@ -506,209 +603,40 @@
       
 
       
-
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jsxzswz.github.io/2019/01/04/blog20181206/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="孙文正">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="孙文正的Blog">
-    </span>
-
-    
-      <header class="post-header">
-
+        <div class="post-widgets">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/04/blog20181206/" itemprop="url">Oracle常用函数</a></h1>
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
         
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T17:21:26+08:00">
-                2019-01-04
-              </time>
-            
+        
 
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/01/04/blog20181206/" class="leancloud_visitors" data-flag-title="Oracle常用函数">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数&#58;</span>
-                
-                <span title="本文字数">
-                  1.9k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
+        
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在平时写PL/SQL的时候，经常要用到很多系统自带的函数，而这些函数用起来非常好用，但是每次用完以后，就又忘到脑后了，为了加深自己的印象，以及对这些函数做一个全面的总结，下面就对Oracle常见函数做个整理，方便以后查询。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/04/blog20181206/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/14/blog20190114/" rel="next" title="MySQL数据类型介绍">
+                <i class="fa fa-chevron-left"></i> MySQL数据类型介绍
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -718,14 +646,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -733,6 +658,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTQ5My8xODA0MA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -753,8 +687,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -873,6 +816,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL安装"><span class="nav-number">2.</span> <span class="nav-text">MySQL安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">2.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解压"><span class="nav-number">2.2.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置my-ini"><span class="nav-number">2.3.</span> <span class="nav-text">配置my.ini</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.4.</span> <span class="nav-text">配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化MySQL"><span class="nav-number">2.5.</span> <span class="nav-text">初始化MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装启动MySQL服务"><span class="nav-number">2.6.</span> <span class="nav-text">安装启动MySQL服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录MySQL"><span class="nav-number">2.7.</span> <span class="nav-text">登录MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改root密码"><span class="nav-number">2.8.</span> <span class="nav-text">修改root密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止服务"><span class="nav-number">2.9.</span> <span class="nav-text">停止服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">3.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1029,6 +988,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1057,6 +1020,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1508,6 +1482,23 @@
 
   
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 15384,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
