@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="文章描述 MySQL数据库中提供了很丰富的函数。MySQL函数包括数学函数、字符串函数、日期和时间函数、条件判断函数、系统信息函数、加密函数、格式化函数等。通过这些函数，可以简化用户的操作。以下是对mysql中的常用函数进行了汇总介绍，需要的朋友可以过来参考下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-14T02:57:05.416Z">
+<meta property="og:updated_time" content="2019-01-29T06:23:34.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql常用函数">
 <meta name="twitter:description" content="文章描述 MySQL数据库中提供了很丰富的函数。MySQL函数包括数学函数、字符串函数、日期和时间函数、条件判断函数、系统信息函数、加密函数、格式化函数等。通过这些函数，可以简化用户的操作。以下是对mysql中的常用函数进行了汇总介绍，需要的朋友可以过来参考下。">
@@ -742,7 +742,7 @@
 </tbody>
 </table>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">SELECT id , `customer_name` , sex , LEFT(telephone,3) ,USER(),RAND(),WEEK(now()) ,SQRT(4) ,CONCAT(telephone,&apos;-&apos;,id),LOWER(&apos;abc&apos;), CURRENT_TIME(),UNIX_TIMESTAMP(now()),</span><br><span class="line">CASE</span><br><span class="line">WHEN sex = 1 THEN &apos;男&apos;</span><br><span class="line">WHEN sex = 2 THEN &apos;女&apos;</span><br><span class="line">else &apos;保密&apos;</span><br><span class="line">END AS sex</span><br><span class="line">FROM customer_demand</span><br><span class="line">ORDER BY id DESC</span><br><span class="line">LIMIT 10</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>前几天在看一本sql学习指南 是关于sql语句的介绍 书中主要针对mysql进行讲解 这几天有空 总结上常用的mysql函数 以便日后用到学习。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>有些函数真的非常有用，真的希望我的总结对你有帮助。谢谢各位的阅读，也希望你能和我分享你的学习心得。</p>
 
       
     </div>
@@ -773,7 +773,7 @@
   <p><span>本文标题:</span><a href="/2019/01/04/blog20181207/">Mysql常用函数</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
   <p><span>发布时间:</span>2019年01月04日 - 17:01</p>
-  <p><span>最后更新:</span>2019年01月14日 - 10:01</p>
+  <p><span>最后更新:</span>2019年01月29日 - 14:01</p>
   <p><span>原始链接:</span><a href="/2019/01/04/blog20181207/" title="Mysql常用函数">https://jsxzswz.github.io/2019/01/04/blog20181207/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/01/04/blog20181207/" aria-label="复制成功！"></i></span>
   </p>
@@ -956,7 +956,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1102,7 +1102,7 @@
     
       <span class="post-meta-item-text">全站字数&#58;</span>
     
-    <span title="全站字数">11.6k</span>
+    <span title="全站字数">15k</span>
   
 </div>
 
