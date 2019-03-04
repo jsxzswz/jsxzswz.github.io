@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="前言Java 是一门面向对象的编程语言，它不仅吸收了 C++ 语言的各种优点，还摒弃了 C++ 里难以理解的多重继承、指针等概念，因此 Java 语言具有功能强大和简单易用两个特征。此外，Java 还具有简单性、面向对象、分布式、健壮性、安全性、平台独立与可移植性、多线程、动态性等特点。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-01T01:52:34.080Z">
+<meta property="og:updated_time" content="2019-03-04T07:03:15.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java语言基础">
 <meta name="twitter:description" content="前言Java 是一门面向对象的编程语言，它不仅吸收了 C++ 语言的各种优点，还摒弃了 C++ 里难以理解的多重继承、指针等概念，因此 Java 语言具有功能强大和简单易用两个特征。此外，Java 还具有简单性、面向对象、分布式、健壮性、安全性、平台独立与可移植性、多线程、动态性等特点。">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">本文字数&#58;</span>
                 
                 <span title="本文字数">
-                  6k
+                  6.3k
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  21
+                  22
                 </span>
               
             </div>
@@ -611,7 +611,12 @@
 </ul>
 <h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>需要使用类型参数，用尖括号扩住，放在类名后面，然后在使用这个类的时候，用实际的参数类型替换此参数。<br>泛型的核心概念：告诉编译器我们想要使用什么类型，然后编译器帮我们处理一起细节。<br>在实现泛型接口的时候，与实现一般的接口唯一的区别就是：需要指定泛型接口的类型参数。<br>基本数据类型不能作为类型参数。</p>
 <h2 id="数组、容器"><a href="#数组、容器" class="headerlink" title="数组、容器"></a>数组、容器</h2><p>在 Java 中，持有对象的方法只有两种：数组和容器。</p>
-<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在 Java 中，数组是一种效率最高的存储和随机访问对象引用序列的方式。<br>对象数组和基本类型数组在使用上几乎是相同的，唯一的区别就是：对象数组保存的是引用，基本类型数组直接保存基本类型的值。</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在 Java 中，数组是一种效率最高的存储和随机访问对象引用序列的方式。<br>对象数组和基本类型数组在使用上几乎是相同的，唯一的区别就是：对象数组保存的是引用，基本类型数组直接保存基本类型的值。<br><code>Arrays.sort()</code>排序算法的实现：<br>点击数组的排序方法会看到这样几行代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public static void sort(int[] a) &#123;</span><br><span class="line">       DualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>DualPivotQuicksort翻译是双抽快速排序，继点击方法会看到这样几行代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Use Quicksort on small arrays</span><br><span class="line">   if (right - left &lt; QUICKSORT_THRESHOLD) &#123;//286</span><br><span class="line">      sort(a, left, right, true);</span><br><span class="line">      return;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看到小于286时，使用双抽快速排序，继续点击其中的sort()方法，可以看到这样几行代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// Use insertion sort on tiny arrays</span><br><span class="line">   if (length &lt; INSERTION_SORT_THRESHOLD) &#123;//47</span><br></pre></td></tr></table></figure></p>
+<p>可以看到如果数组长度小于47时，使用插入排序；<br>如果长度大于286呢，看这段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> * The array is not highly structured,</span><br><span class="line"> * use Quicksort instead of merge sort.</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
+<p>如果长度大于286，判断数组的升序连续性好不好，如果好就用归并排序，不好就用快速排序！</p>
+<p>总结：如果长度大于等于286且连续性好的话用归并排序，如果长度大于等于286且连续性不好的话使用快速排序；<br>如果长度小于286且大于等于47的话使用双抽快速排序，如果长度小于47的话就是要插入排序。</p>
 <h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>Java 容器类类库的用途是“保存对象”，并将其划分为两个不同的概念：</p>
 <ul>
 <li>Collection，一个独立元素的序列，包括List、Set、Queue等；</li>
@@ -661,7 +666,7 @@
   <p><span>本文标题:</span><a href="/2019/02/25/blog20190225/">Java语言基础</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
   <p><span>发布时间:</span>2019年02月25日 - 09:02</p>
-  <p><span>最后更新:</span>2019年03月01日 - 09:03</p>
+  <p><span>最后更新:</span>2019年03月04日 - 15:03</p>
   <p><span>原始链接:</span><a href="/2019/02/25/blog20190225/" title="Java语言基础">https://jsxzswz.github.io/2019/02/25/blog20190225/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/02/25/blog20190225/" aria-label="复制成功！"></i></span>
   </p>
@@ -978,7 +983,7 @@
     
       <span class="post-meta-item-text">全站字数&#58;</span>
     
-    <span title="全站字数">24.6k</span>
+    <span title="全站字数">24.9k</span>
   
 </div>
 
