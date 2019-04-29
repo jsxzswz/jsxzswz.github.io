@@ -99,7 +99,7 @@
 
 
 
-  <meta name="keywords" content="java,线程,线程池,">
+  <meta name="keywords" content="SpringBoot,SpringCloud,">
 
 
 
@@ -112,18 +112,20 @@
 
 
 
-<meta name="description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
-<meta name="keywords" content="java,线程,线程池">
+<meta name="description" content="前言谈到SpringCloud最新接触到的可能就是那五大”神兽”,之前最先接触分布式开发是通过dubbo的RPC远程过程调用，而dubbo给我得感觉就是：虽然所有的主机物理上分布了，但是对于用户而言就仿佛是一个整体。而对我们的java开发人员而言，分布式开发的意义又是什么呢？也就是说哪里需要去使用分布式开发呢，其实在任何一个项目里面（MVC设计模式），业务操作是最为核心的部分，而所有项目之中你的业">
+<meta name="keywords" content="SpringBoot,SpringCloud">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java线程及线程池介绍">
-<meta property="og:url" content="https://jsxzswz.github.io/2019/03/11/blog20190311/index.html">
+<meta property="og:title" content="SpringCloud分布式开发理解">
+<meta property="og:url" content="https://jsxzswz.github.io/2019/04/29/blog20190429/index.html">
 <meta property="og:site_name" content="孙文正的Blog">
-<meta property="og:description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
+<meta property="og:description" content="前言谈到SpringCloud最新接触到的可能就是那五大”神兽”,之前最先接触分布式开发是通过dubbo的RPC远程过程调用，而dubbo给我得感觉就是：虽然所有的主机物理上分布了，但是对于用户而言就仿佛是一个整体。而对我们的java开发人员而言，分布式开发的意义又是什么呢？也就是说哪里需要去使用分布式开发呢，其实在任何一个项目里面（MVC设计模式），业务操作是最为核心的部分，而所有项目之中你的业">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-11T07:21:04.838Z">
+<meta property="og:image" content="https://jsxzswz.github.io/images/springCloud.png">
+<meta property="og:updated_time" content="2019-04-29T05:57:45.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java线程及线程池介绍">
-<meta name="twitter:description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
+<meta name="twitter:title" content="SpringCloud分布式开发理解">
+<meta name="twitter:description" content="前言谈到SpringCloud最新接触到的可能就是那五大”神兽”,之前最先接触分布式开发是通过dubbo的RPC远程过程调用，而dubbo给我得感觉就是：虽然所有的主机物理上分布了，但是对于用户而言就仿佛是一个整体。而对我们的java开发人员而言，分布式开发的意义又是什么呢？也就是说哪里需要去使用分布式开发呢，其实在任何一个项目里面（MVC设计模式），业务操作是最为核心的部分，而所有项目之中你的业">
+<meta name="twitter:image" content="https://jsxzswz.github.io/images/springCloud.png">
 
 
 
@@ -153,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="https://jsxzswz.github.io/2019/03/11/blog20190311/">
+  <link rel="canonical" href="https://jsxzswz.github.io/2019/04/29/blog20190429/">
 
 
 
 
 
-  <title>java线程及线程池介绍 | 孙文正的Blog</title>
+  <title>SpringCloud分布式开发理解 | 孙文正的Blog</title>
   
 
 
@@ -339,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jsxzswz.github.io/2019/03/11/blog20190311/">
+    <link itemprop="mainEntityOfPage" href="https://jsxzswz.github.io/2019/04/29/blog20190429/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="孙文正">
@@ -356,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java线程及线程池介绍</h1>
+          <h1 class="post-title" itemprop="name headline">SpringCloud分布式开发理解</h1>
         
 
         <div class="post-meta">
@@ -368,8 +370,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T14:04:38+08:00">
-                2019-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-29T09:30:37+08:00">
+                2019-04-29
               </time>
             
 
@@ -391,8 +393,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/SpringCloud/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringCloud</span>
                   </a>
                 </span>
 
@@ -408,7 +410,7 @@
 
           
           
-             <span id="/2019/03/11/blog20190311/" class="leancloud_visitors" data-flag-title="java线程及线程池介绍">
+             <span id="/2019/04/29/blog20190429/" class="leancloud_visitors" data-flag-title="SpringCloud分布式开发理解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -471,144 +473,118 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>谈到SpringCloud最新接触到的可能就是那五大”神兽”,之前最先接触分布式开发是通过dubbo的RPC远程过程调用，而dubbo给我得感觉就是：虽然所有的主机物理上分布了，但是对于用户而言就仿佛是一个整体。而对我们的java开发人员而言，分布式开发的意义又是什么呢？也就是说哪里需要去使用分布式开发呢，其实在任何一个项目里面（MVC设计模式），业务操作是最为核心的部分，而所有项目之中你的业务操作是否完成直接决定了你的项目本身是否健壮。</p>
 <a id="more"></a>
-<h2 id="多线程的作用"><a href="#多线程的作用" class="headerlink" title="多线程的作用"></a>多线程的作用</h2><p>在一个高并发的网站中，多线程是必不可少的。下面先说一下多线程在程序中的作用。</p>
+<p><img src="/images/springCloud.png" alt="SpringCloud" title="SpringCloud"></p>
+<h2 id="回到”五大神兽”"><a href="#回到”五大神兽”" class="headerlink" title="回到”五大神兽”"></a>回到”五大神兽”</h2><ul>
+<li>服务发现——Netflix Eureka</li>
+<li>客服端负载均衡——Netflix Ribbon（Feign）</li>
+<li>断路器——Netflix Hystrix</li>
+<li>服务网关——Netflix Zuul</li>
+<li>分布式配置——Spring Cloud Config</li>
+</ul>
+<h2 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h2><p>一个RESTful风格的服务，用来定位运行在业务流程管理开发平台(AWS Enterprise BPM Platform)层的中间层服务。</p>
 <ul>
-<li>提高前端请求的响应速度；</li>
-<li>减清服务器的压力；</li>
-<li>提高处理能力，增加性能，充分利用服务器资源。</li>
+<li>Eureka服务器用作服务的注册中心。(对比dubbo的注册中心：zk redis等);</li>
+<li>Eureka客户端其实就是一个java客户端，负责与服务器的交互，用作轮询负责均衡，故障切换支持等。<br>Netflix在其生产环境中使用的是另外的客户端，它提供基于流量、资源利用率以及出错状态的加权负载均衡。</li>
 </ul>
-<h2 id="多线程的使用场景"><a href="#多线程的使用场景" class="headerlink" title="多线程的使用场景"></a>多线程的使用场景</h2><p>以下是web开发常见的多线程使用场景：</p>
+<p>注册中心服务器:</p>
+<p>依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency```&gt;</span><br></pre></td></tr></table></figure>
+<p>配置application.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8011</span><br><span class="line"># 默认情况下erureka server也是一个eureka client ,必须要指定一个 server。eureka server的配置文件appication.yml 通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.</span><br><span class="line">eureka:</span><br><span class="line">  instance:</span><br><span class="line">    hostname: localhost</span><br><span class="line">  client:</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: eureka-server</span><br></pre></td></tr></table></figure>
+<p>注解：</p>
+<p><code>@EnableEurekaServer:这个注解需要在springboot工程的启动application类上加,表示启动一个服务注册中心;</code></p>
+<p>客户端服务器：</p>
+<p>依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-eureka-client&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>配置application.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8022</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: eureka-client</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8011/eureka/</span><br></pre></td></tr></table></figure>
+<p>注解：</p>
+<p><code>@EnableEurekaClient:表明自己是一个eurekaclient;</code></p>
+<h2 id="Ribbon"><a href="#Ribbon" class="headerlink" title="Ribbon"></a>Ribbon</h2><p>主要提供客户侧的软件负载均衡算法。<br>Ribbon客户端组件提供一系列完善的配置选项，比如连接超时、重试、重试算法等。 Ribbon是一个负载均衡客户端，可以很好的控制http和tcp的一些行为。Feign默认集成了Ribbon。<br>Ribbon内置可插拔、可定制的负载均衡组件。<br>一些常用的负载均衡策略:</p>
 <ul>
-<li>最典型的应用比如tomcat，tomcat内部采用的就是多线程</li>
-<li>图形用户界面中，多线程可以提供用户界面响应灵敏度；</li>
-<li>web服务器本身；各种专用服务器（如游戏服务器）；</li>
-<li>后台定时任务，例如：定时向大量（100w以上）的用户发送邮件；</li>
-<li>异步处理，例如：发微博、记录日志等。</li>
+<li>简单轮询负载均衡</li>
+<li>加权响应时间负载均衡</li>
+<li>区域感知轮询负载均衡</li>
+<li>随机负载均衡<br>Ribbon中还包括一下功能:</li>
+<li>易于与服务发现组件（比如Netflix的Eureka）集成</li>
+<li>使用Archaius完成运行时配置</li>
+<li>使用JMX暴露运维指标，使用Servo发布</li>
+<li>多种可插拔的序列化选择</li>
+<li>异步和批处理操作（即将推出）</li>
+<li>自动SLA框架（即将推出）</li>
+<li>系统管理/指标控制台（即将推出）</li>
 </ul>
-<h2 id="java中的多线程"><a href="#java中的多线程" class="headerlink" title="java中的多线程"></a>java中的多线程</h2><h3 id="java中简单的实现多线程的方式"><a href="#java中简单的实现多线程的方式" class="headerlink" title="java中简单的实现多线程的方式"></a>java中简单的实现多线程的方式</h3><p>继承Thread类，重写run方法;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadTest extends Thread &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(getName() + &quot; &quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot;  : &quot; + i);</span><br><span class="line">            if (i == 20) &#123;</span><br><span class="line">                new ThreadTest().start();</span><br><span class="line">                new ThreadTest().start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实现Runable接口，实现run方法；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public class RunnableThreadTest implements Runnable &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        //for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">        //    System.out.println(Thread.currentThread().getName() + &quot; &quot; + i);</span><br><span class="line">        //    if (i == 20) &#123;</span><br><span class="line">        //        RunnableThreadTest rt = new RunnableThreadTest();</span><br><span class="line">        //        new Thread(rt, &quot;新线程1&quot;).start();</span><br><span class="line">        //        new Thread(rt, &quot;新线程2&quot;).start();</span><br><span class="line">        //    &#125;</span><br><span class="line">        //&#125;</span><br><span class="line">        MyThread t = new MyThread();</span><br><span class="line">        for (int i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">            new Thread(t).start();//同一个t1，如果在Thread中就不行，会报错</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MyThread implements Runnable &#123;</span><br><span class="line">    private int ticket = 10000;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    //记得要资源公共，要在run方法之前加上synchronized关键字，要不然会出现抢资源的情况</span><br><span class="line">    public synchronized void run() &#123;</span><br><span class="line">        for (int i = 0; i &lt; 10000; i++) &#123;</span><br><span class="line">            if (this.ticket &gt; 0) &#123;</span><br><span class="line">                System.out.println(&quot;卖票：ticket&quot; + this.ticket--);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="java线程的状态"><a href="#java线程的状态" class="headerlink" title="java线程的状态"></a>java线程的状态</h3><ul>
-<li><b>创建</b>：当new了一个线程，并没有调用start之前，线程处于创建状态；</li>
-<li><b>就绪</b>：当调用了start之后，线程处于就绪状态，这是，线程调度程序还没有设置执行当前线程；</li>
-<li><b>运行</b>：线程调度程序执行到线程时，当前线程从就绪状态转成运行状态，开始执行run方法里边的代码；</li>
-<li><b>阻塞</b>：线程在运行的时候，被暂停执行（通常等待某项资源就绪后在执行，sleep、wait可以导致线程阻塞），这是该线程处于阻塞状态；</li>
-<li><b>死亡</b>：当一个线程执行完run方法里边的代码或调用了stop方法后，该线程结束运行。</li>
-</ul>
-<h2 id="java中的线程池（ThreadPoolExecutor）"><a href="#java中的线程池（ThreadPoolExecutor）" class="headerlink" title="java中的线程池（ThreadPoolExecutor）"></a>java中的线程池（ThreadPoolExecutor）</h2><h3 id="为什么要引入线程池"><a href="#为什么要引入线程池" class="headerlink" title="为什么要引入线程池"></a>为什么要引入线程池</h3><p>当我们需要的并发执行线程数量很多时，且每个线程执行很短的时间就结束了，这样，我们频繁的创建、销毁线程就大大降低了工作效率（创建和销毁线程需要时间、资源）。<br>java中的线程池可以达到这样的效果：一个线程执行完任务之后，继续去执行下一个任务，不被销毁，这样线程利用率提高</p>
-<h3 id="java线程池各参数介绍"><a href="#java线程池各参数介绍" class="headerlink" title="java线程池各参数介绍"></a>java线程池各参数介绍</h3><p>java.util.concurrent.ThreadPoolExecutor。ThreadPoolExecutor类是java线程池中的核心类。他的实现方式有四种：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadPoolExecutor extends AbstractExecutorService &#123;</span><br><span class="line">　　public ThreadPoolExecutor(int corePoolSize,</span><br><span class="line">　　　　int maximumPoolSize,</span><br><span class="line">　　　　long keepAliveTime,</span><br><span class="line">　　　　TimeUnit unit,</span><br><span class="line">　　　　BlockingQueue&lt;Runnable&gt; workQueue) &#123;</span><br><span class="line">　　　　this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,</span><br><span class="line">　　　　Executors.defaultThreadFactory(), defaultHandler);</span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　public ThreadPoolExecutor(int corePoolSize,</span><br><span class="line">　　　　int maximumPoolSize,</span><br><span class="line">　　　　long keepAliveTime,</span><br><span class="line">　　　　TimeUnit unit,</span><br><span class="line">　　　　BlockingQueue&lt;Runnable&gt; workQueue,</span><br><span class="line">　　　　ThreadFactory threadFactory) &#123;</span><br><span class="line">　　　　this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,</span><br><span class="line">　　　　threadFactory, defaultHandler);</span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　public ThreadPoolExecutor(int corePoolSize,</span><br><span class="line">　　　　int maximumPoolSize,</span><br><span class="line">　　　　long keepAliveTime,</span><br><span class="line">　　　　TimeUnit unit,</span><br><span class="line">　　　　BlockingQueue&lt;Runnable&gt; workQueue,</span><br><span class="line">　　　　RejectedExecutionHandler handler) &#123;</span><br><span class="line">　　　　this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,</span><br><span class="line">　　　　Executors.defaultThreadFactory(), handler);</span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　public ThreadPoolExecutor(int corePoolSize,</span><br><span class="line">　　　　int maximumPoolSize,</span><br><span class="line">　　　　long keepAliveTime,</span><br><span class="line">　　　　TimeUnit unit,</span><br><span class="line">　　　　BlockingQueue&lt;Runnable&gt; workQueue,</span><br><span class="line">　　　　ThreadFactory threadFactory,</span><br><span class="line">　　　　RejectedExecutionHandler handler) &#123;</span><br><span class="line">　　　　if (corePoolSize &lt; 0 ||</span><br><span class="line">　　　　　　maximumPoolSize &lt;= 0 ||</span><br><span class="line">　　　　　　maximumPoolSize &lt; corePoolSize ||</span><br><span class="line">　　　　　　keepAliveTime &lt; 0)</span><br><span class="line">　　　　　　throw new IllegalArgumentException();</span><br><span class="line">　　　　if (workQueue == null || threadFactory == null || handler == null)</span><br><span class="line">　　　　　　throw new NullPointerException();</span><br><span class="line">　　　　this.corePoolSize = corePoolSize;</span><br><span class="line">　　　　this.maximumPoolSize = maximumPoolSize;</span><br><span class="line">　　　　this.workQueue = workQueue;</span><br><span class="line">　　　　this.keepAliveTime = unit.toNanos(keepAliveTime);</span><br><span class="line">　　　　this.threadFactory = threadFactory;</span><br><span class="line">　　　　this.handler = handler;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过ThreadPoolExecutor类的源码可以看出，ThreadPoolExecutor类继承AbstractExecutorService，提供四个构造方法。<br>下面介绍下构造方法中的参数：</p>
+<p>依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-ribbon&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>配置application.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8055</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: eureka-ribbon</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8011/eureka/</span><br></pre></td></tr></table></figure>
+<p>注解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@EnableDiscoveryClient：向服务中心注册；</span><br><span class="line">@LoadBalanced：结合restRemplate的@Bean一起使用，开始负载均衡功能；</span><br></pre></td></tr></table></figure>
+<h2 id="Feign"><a href="#Feign" class="headerlink" title="Feign"></a>Feign</h2><p>Feign是一个声明式的伪Http客户端，它使得写Http客户端变得更简单。使用Feign，只需要创建一个接口并注解。它具有可插拔的注解特性，可使用Feign 注解和JAX-RS注解。Feign支持可插拔的编码器和解码器。Feign默认集成了Ribbon，并和Eureka结合，默认实现了负载均衡的效果。<br>简而言之：<br>Feign 采用的是基于接口的注解<br>Feign 整合了ribbon</p>
+<p>依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-feign&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>配置application.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8044</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: eureka-feign</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8011/eureka/</span><br></pre></td></tr></table></figure>
+<p>注解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@EnableFeignClients 开启Feign功能；</span><br><span class="line">@FeignClient：在feign接口上加入此注解，通过@FeignClient(&quot;服务名&quot;)，来指定调用哪个服务。</span><br></pre></td></tr></table></figure>
+<h2 id="Hystrix"><a href="#Hystrix" class="headerlink" title="Hystrix"></a>Hystrix</h2><p>Netflix开源了Hystrix组件，实现了断路器模式，SpringCloud对这一组件进行了整合。较底层的服务如果出现故障，会导致连锁故障。当对特定的服务的调用的不可用达到一个阀值（Hystric 是5秒20次）断路器将会被打开。断路打开后，可用避免连锁故障，fallback方法可以直接返回一个固定值。<br>断路器的特点：</p>
 <ul>
-<li>corePoolSize：线程池的大小。线程池创建之后不会立即去创建线程，而是等待线程的到来。若当前执行的线程数大于改值是，线程会加入到缓冲队列</li>
-<li>maximumPoolSize：线程池中创建的最大线程数</li>
-<li>keepAliveTime：空闲的线程多久时间后被销毁。默认情况下，改值在线程数大于corePoolSize时，对超出corePoolSize值得这些线程起作用</li>
-<li>unit：TimeUnit枚举类型的值，代表keepAliveTime时间单位</li>
-<li>workQueue：阻塞队列，用来存储等待执行的任务，决定了线程池的排队策略<br>　<em> ArrayBlockingQueue
-　</em> LinkedBlockingQueue<br>　<em> SynchronousQueue
-　</em> threadFactory：线程工厂，是用来创建线程的。默认new Executors.DefaultThreadFactory()</li>
-<li>handler:线程拒绝策略。当创建的线程超出maximumPoolSize，且缓冲队列已满时，新任务会拒绝<ul>
-<li>ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常<br>　<em> ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常
-　</em> ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）<br>　* ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务</li>
+<li>断路器可以防止一个应用程序多次试图执行一个操作，即很可能失败，允许它继续而不等待故障恢复或者浪费 CPU 周期，而它确定该故障是持久的.</li>
+<li>断路器模式也使应用程序能够检测故障是否已经解决。如果问题似乎已经得到纠正​​，应用程序可以尝试调用操作。</li>
+<li>断路器增加了稳定性和灵活性，以一个系统，提供稳定性，而系统从故障中恢复，并尽量减少此故障的对性能的影响。它可以帮助快速地拒绝对一个操作，即很可能失败，而不是等待操作超时（或者不返回）的请求，以保持系统的响应时间。如果断路器提高每次改变状态的时间的事件，该信息可以被用来监测由断路器保护系统的部件的健康状况，或以提醒管理员当断路器跳闸，以在打开状态。</li>
 </ul>
-</li>
-</ul>
-<p>execute()方法是Executor中声明的方法，在ThreadPoolExecutor有了具体的实现，这个方法是ThreadPoolExecutor的核心方法，通过这个方法可以向线程池提交一个任务，交由线程池去执行;<br>submit()方法是ExecutorService中声明的方法，在AbstractExecutorService中进行了实现，Executor中并没有对其进行重写。从实现中可以看出，submit方法最终也调用了execute方法，但submit方法可以利用Future来获取任务执行结果。</p>
-<h2 id="Spring中线程池的使用"><a href="#Spring中线程池的使用" class="headerlink" title="Spring中线程池的使用"></a>Spring中线程池的使用</h2><p>Spring中的线程池是由ThreadPoolTaskExecutor类来实现的。该类的实现原理最终也是调用了java中的ThreadPoolExecutor类中的一些方法。<br>ThreadPoolTaskExecutor有两种常用的有两种初始化方式：xml配置和java代码初始化。</p>
-<h3 id="xml文件配置"><a href="#xml文件配置" class="headerlink" title="xml文件配置"></a>xml文件配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;taskExecutor&quot; class=&quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&quot;&gt;</span><br><span class="line">&lt;property name=&quot;corePoolSize&quot; value=&quot;5&quot; /&gt;</span><br><span class="line">&lt;property name=&quot;keepAliveSeconds&quot; value=&quot;200&quot; /&gt;</span><br><span class="line">&lt;property name=&quot;maxPoolSize&quot; value=&quot;10&quot; /&gt;</span><br><span class="line">&lt;property name=&quot;queueCapacity&quot; value=&quot;20&quot; /&gt;</span><br><span class="line">&lt;property name=&quot;rejectedExecutionHandler&quot;&gt;</span><br><span class="line">&lt;bean class=&quot;java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy&quot; /&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public MyThreadPoolTaskExecutor &#123;</span><br><span class="line">@Autowired</span><br><span class="line">private ThreadPoolTaskExecutor taskExecutor;</span><br><span class="line"></span><br><span class="line">　private void test()&#123;</span><br><span class="line">　　taskExecutor.execute(new Runnable()&#123;</span><br><span class="line">　　　　@Override</span><br><span class="line">　　　　public void run() &#123;</span><br><span class="line">　　　　　//执行的代码</span><br><span class="line">　　　　&#125;&#125;);</span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="java程序中配置"><a href="#java程序中配置" class="headerlink" title="java程序中配置"></a>java程序中配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">private void test2()&#123;</span><br><span class="line">　　ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();</span><br><span class="line">　　executor.setCorePoolSize(10);</span><br><span class="line">　　executor.setMaxPoolSize(15);</span><br><span class="line">　　executor.setKeepAliveSeconds(1);</span><br><span class="line">　　executor.setQueueCapacity(5);</span><br><span class="line">　　executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());</span><br><span class="line">　　executor.initialize();</span><br><span class="line">　　executor.execute(new Runnable()&#123;</span><br><span class="line">　　　　@Override</span><br><span class="line">　　　　public void run() &#123;</span><br><span class="line">　　　　　　//执行的代码</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="附：常用参数总结"><a href="#附：常用参数总结" class="headerlink" title="附：常用参数总结"></a>附：常用参数总结</h2><p>关于Java线程池的参数设置： 线程池是Java多线程里开发里的重要内容，使用难度不大，但如何用好就要明白参数的含义和如何去设置！</p>
-<h3 id="ThreadPoolExecutor的重要参数"><a href="#ThreadPoolExecutor的重要参数" class="headerlink" title="ThreadPoolExecutor的重要参数"></a>ThreadPoolExecutor的重要参数</h3><ul>
-<li>corePoolSize：核心线程数<ul>
-<li>核心线程会一直存活，及时没有任务需要执行</li>
-<li>当线程数小于核心线程数时，即使有线程空闲，线程池也会优先创建新线程处理</li>
-<li>设置allowCoreThreadTimeout=true（默认false）时，核心线程会超时关闭</li>
-</ul>
-</li>
-<li>queueCapacity：任务队列容量（阻塞队列）<br>  当核心线程数达到最大时，新任务会放在队列中排队等待执行</li>
-<li>maxPoolSize：最大线程数<ul>
-<li>当线程数&gt;=corePoolSize，且任务队列已满时。线程池会创建新线程来处理任务</li>
-<li>当线程数=maxPoolSize，且任务队列已满时，线程池会拒绝处理任务而抛出异常</li>
-</ul>
-</li>
-<li>keepAliveTime：线程空闲时间<ul>
-<li>当线程空闲时间达到keepAliveTime时，线程会退出，直到线程数量=corePoolSize</li>
-<li>如果allowCoreThreadTimeout=true，则会直到线程数量=0</li>
-</ul>
-</li>
-<li>allowCoreThreadTimeout：允许核心线程超时</li>
-<li>rejectedExecutionHandler：任务拒绝处理器<ul>
-<li>两种情况会拒绝处理任务：<ul>
-<li>当线程数已经达到maxPoolSize，切队列已满，会拒绝新任务</li>
-<li>当线程池被调用shutdown()后，会等待线程池里的任务执行完毕，再shutdown。如果在调用shutdown()和线程池真正shutdown之间提交任务，会拒绝新任务</li>
-</ul>
-</li>
-<li>线程池会调用rejectedExecutionHandler来处理这个任务。如果没有设置默认是AbortPolicy，会抛出异常</li>
-<li>ThreadPoolExecutor类有几个内部实现类来处理这类情况<ul>
-<li>AbortPolicy 丢弃任务，抛运行时异常</li>
-<li>CallerRunsPolicy 执行任务</li>
-<li>DiscardPolicy 忽视，什么都不会发生</li>
-<li>DiscardOldestPolicy 从队列中踢出最先进入队列（最后一个执行）的任务</li>
-<li>实现RejectedExecutionHandler接口，可自定义处理器</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="ThreadPoolExecutor执行顺序"><a href="#ThreadPoolExecutor执行顺序" class="headerlink" title="ThreadPoolExecutor执行顺序"></a>ThreadPoolExecutor执行顺序</h3><p>线程池按以下行为执行任务:</p>
+<p>在Ribbon中使用</p>
+<p>依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-hystrix&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>注解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@EnableHystrix：开启Hystrix；</span><br><span class="line">@HystrixCommand：在Service层的方法上加入，对方法创建熔断器的功能，并指定了fallbackMethod熔断方法，书写对应名称的方法；</span><br><span class="line">例如：</span><br><span class="line">@HystrixCommand(fallbackMethod = &quot;hiError&quot;)</span><br><span class="line">    public String hiService(String name) &#123;</span><br><span class="line">        return restTemplate.getForObject(&quot;http://eureka-client/hello?name=&quot; + name, String.class);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>在Feign中使用</p>
+<p>Feign是自带断路器的，在D版本的SpringCloud中，它没有默认打开。需要在配置文件中配置打开它，在配置文件加入配置：<code>feign.hystrix.enabled=true</code></p>
+<p>注解：</p>
+<p><code>@FeignClient：在FeignClient的接口的注解中加上fallback属性指定类，此类实现FeignClient的接口,并注入到IOC容器中（@Component），实现熔断方法即可。</code></p>
+<h2 id="Zuul"><a href="#Zuul" class="headerlink" title="Zuul"></a>Zuul</h2><p>在微服务架构中，需要几个基础的服务治理组件，包括服务注册与发现、服务消费、负载均衡、断路器、智能路由、配置管理等，由这几个基础组件相互协作，共同组建了一个简单的微服务系统。在SpringCloud微服务系统中，一种常见的负载均衡方式是：客户端的请求首先经过负载均衡（zuul、Ngnix），再到达服务网关（zuul集群），然后再到具体的服。，服务统一注册到高可用的服务注册中心集群，服务的所有的配置文件由配置服务管理，配置服务的配置文件放在git仓库，方便开发人员随时改配置。类似nginx，反向代理的功能，不过netflix自己增加了一些配合其他组件的特性。Zuul的主要功能是路由转发和过滤器。路由功能是微服务的一部分，比如/api/user转发到到user服务，/api/shop转发到到shop服务。zuul默认和Ribbon结合实现了负载均衡的功能。</p>
+<p>依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-zuul&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>配置application.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8066</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: eureka-zuul</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8011/eureka/</span><br><span class="line">#以/api-ribbo/ 开头的请求都转发给eureka-ribbon服务</span><br><span class="line">#以/api-feign/ 开头的请求都转发给eureka-feign服务</span><br><span class="line">zuul:</span><br><span class="line">  ignored-services: &quot;*&quot;</span><br><span class="line">  sensitive-headers: &quot;*&quot;</span><br><span class="line">  routes:</span><br><span class="line">    api-ribbon:</span><br><span class="line">      path: /api-ribbon/**</span><br><span class="line">      serviceId: eureka-ribbon</span><br><span class="line">    api-feign:</span><br><span class="line">      path: /api-feign/**</span><br><span class="line">      serviceId: eureka-feign</span><br></pre></td></tr></table></figure>
+<p>zuul的服务过滤：zuul不仅只是路由，并且还能过滤，做一些安全验证。（实现：继承ZuulFilter）<br>filterType：返回一个字符串代表过滤器的类型，<br>在zuul中定义了四种不同生命周期的过滤器类型，具体如下：</p>
 <ul>
-<li>当线程数小于核心线程数时，创建线程。</li>
-<li>当线程数大于等于核心线程数，且任务队列未满时，将任务放入任务队列。</li>
-<li>当线程数大于等于核心线程数，且任务队列已满<ul>
-<li>若线程数小于最大线程数，创建线程</li>
-<li>若线程数等于最大线程数，抛出异常，拒绝任务</li>
+<li>pre：路由之前</li>
+<li>routing：路由之时</li>
+<li>post： 路由之后</li>
+<li>error：发送错误调用</li>
+<li>filterOrder：过滤的顺序</li>
+<li>shouldFilter：这里可以写逻辑判断，是否要过滤，本文true,永远过滤。</li>
+<li>run：过滤器的具体逻辑。可用很复杂，包括查sql，nosql去判断该请求到底有没有权限访问。</li>
 </ul>
-</li>
+<h2 id="SpringCloudConfig"><a href="#SpringCloudConfig" class="headerlink" title="SpringCloudConfig"></a>SpringCloudConfig</h2><ul>
+<li>SpringCloudConfig就是我们通常意义上说的分布式配置中心，将应用原本放在本地文件的配置抽取出来放在中心服务器上，从而能够提供更好的管理，发布能力。</li>
+<li>SpringCloudConfig分为服务端和客户端，服务端负责将git（或者svn）上存储的配置文件发布成REST接口，客户端可以从服务端RESTjie接口获取配置。但客户端并不能主动感知配置文件的变化，从而主动去获取新的配置，它需要每个客户端通过POST方法触发各自的/refresh请求，SpringCloudBus就通过一个轻量级消息代理连接分布式系统节点。</li>
+<li>可以用于广播状态更改，（如配置更改）或者管理指令。</li>
+<li>SpringCloudBus提供了通过POST方法访问的endpoint/bus/refresh，这个接口通常由git的钩子功能调用，用以通知各个SpringCloudConfig的客户端去服务端更新配置。</li>
 </ul>
-<h3 id="如何设置参数"><a href="#如何设置参数" class="headerlink" title="如何设置参数"></a>如何设置参数</h3><ul>
-<li>默认值<ul>
-<li>corePoolSize=1</li>
-<li>queueCapacity=Integer.MAX_VALUE</li>
-<li>maxPoolSize=Integer.MAX_VALUE</li>
-<li>keepAliveTime=60s</li>
-<li>allowCoreThreadTimeout=false</li>
-<li>rejectedExecutionHandler=AbortPolicy()</li>
+<p>配置中心服务器:</p>
+<p>依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>配置application.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8077</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8011/eureka/</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: eureka-config</span><br><span class="line"> cloud:</span><br><span class="line">   config:</span><br><span class="line">     label: master</span><br><span class="line">     server:</span><br><span class="line">       git:</span><br><span class="line">          uri: https://github.com/jsxzswz/SpringcloudConfig</span><br><span class="line">         searchPaths: respo</span><br><span class="line">         username:</span><br><span class="line">         password:</span><br></pre></td></tr></table></figure>
+<p>注解：</p>
+<p><code>@EnableConfigServer：应用在程序的入口Application类上，表示开启配置服务器的功能；</code></p>
+<p>配置中心客户端：</p>
+<p>依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>配置bootstrap.yml：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8033</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: config-client</span><br><span class="line"> cloud:</span><br><span class="line">  config:</span><br><span class="line">    label: master</span><br><span class="line">    profile: dev</span><br><span class="line">    discovery:</span><br><span class="line">       enabled: true</span><br><span class="line">       serviceId: eureka-config</span><br><span class="line">    bus:</span><br><span class="line">      enable: true</span><br><span class="line">      trace:</span><br><span class="line">        enabled: true</span><br><span class="line"></span><br><span class="line">eureka:</span><br><span class="line">  client:</span><br><span class="line">    serviceUrl:</span><br><span class="line">      defaultZone: http://localhost:8011/eureka/</span><br><span class="line"></span><br><span class="line">management:</span><br><span class="line">  endpoint:</span><br><span class="line">    web:</span><br><span class="line">      exposure:</span><br><span class="line">        include: bus-refresh</span><br></pre></td></tr></table></figure>
+<p>spring.cloud.config.label 指明远程仓库的分支<br>spring.cloud.config.profile</p>
+<ul>
+<li>dev开发环境配置文件</li>
+<li>test测试环境</li>
+<li>pro正式环境<br>spring.cloud.config.serviceId 服务名称<br>http请求地址和资源文件映射如下:</li>
 </ul>
-</li>
-<li>如何来设置<ul>
-<li>需要根据几个值来决定<ul>
-<li>tasks ：每秒的任务数，假设为500~1000</li>
-<li>taskcost：每个任务花费时间，假设为0.1sW</li>
-<li>responsetime：系统允许容忍的最大响应时间，假设为1s</li>
-</ul>
-</li>
-<li>corePoolSize = 每秒需要多少个线程处理？<ul>
-<li>threadcount = tasks/(1/taskcost) =tasks<em>taskcout =  (500~1000)</em>0.1 = 50~100 个线程。corePoolSize设置应该大于50</li>
-<li>根据8020原则，如果80%的每秒任务数小于800，那么corePoolSize设置为80即可</li>
-</ul>
-</li>
-<li>queueCapacity = (coreSizePool/taskcost)*responsetime<ul>
-<li>计算可得 queueCapacity = 80/0.1*1 = 80。意思是队列里的线程可以等待1s，超过了的需要新开线程来执行</li>
-<li>切记不能设置为Integer.MAX_VALUE，这样队列会很大，线程数只会保持在corePoolSize大小，当任务陡增时，不能新开线程来执行，响应时间会随之陡增。</li>
-</ul>
-</li>
-<li>maxPoolSize = (max(tasks)- queueCapacity)/(1/taskcost)<ul>
-<li>计算可得 maxPoolSize = (1000-80)/10 = 92</li>
-<li>（最大任务数-队列容量）/每个线程每秒处理能力 = 最大线程数</li>
-</ul>
-</li>
-<li>rejectedExecutionHandler：根据具体情况来决定，任务不重要可丢弃，任务重要则要利用一些缓冲机制来处理</li>
-<li>keepAliveTime和allowCoreThreadTimeout采用默认通常能满足</li>
-</ul>
-</li>
-<li>以上都是理想值，实际情况下要根据机器性能来决定。如果在未达到最大线程数的情况机器cpu load已经满了，则需要通过升级硬件（呵呵）和优化代码，降低taskcost来处理。</li>
-</ul>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>本文内容大体就这些，若大家觉得说的有什么不好的地方，请指正，谢谢！</p>
-<p>参考链接：<a href="https://www.cnblogs.com/owenma/p/8557074.html" target="_blank" rel="noopener">Java线程池使用和常用参数</a>！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/&#123;application&#125;/&#123;profile&#125;[/&#123;label&#125;]</span><br><span class="line">/&#123;application&#125;-&#123;profile&#125;.yml</span><br><span class="line">/&#123;label&#125;/&#123;application&#125;-&#123;profile&#125;.yml</span><br><span class="line">/&#123;application&#125;-&#123;profile&#125;.properties</span><br><span class="line">/&#123;label&#125;/&#123;application&#125;-&#123;profile&#125;.properties</span><br></pre></td></tr></table></figure>
+<p>参考链接：<a href="https://gitee.com/liudongyang/SpringCloudLearning" target="_blank" rel="noopener">网络大神方志鹏的帖子</a>  <a href="https://www.cnblogs.com/ldy-blogs/p/9264102.html" target="_blank" rel="noopener">SpringCloud分布式开发理解</a></p>
 
       
     </div>
@@ -636,12 +612,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/03/11/blog20190311/">java线程及线程池介绍</a></p>
+  <p><span>本文标题:</span><a href="/2019/04/29/blog20190429/">SpringCloud分布式开发理解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
-  <p><span>发布时间:</span>2019年03月11日 - 14:03</p>
-  <p><span>最后更新:</span>2019年03月11日 - 15:03</p>
-  <p><span>原始链接:</span><a href="/2019/03/11/blog20190311/" title="java线程及线程池介绍">https://jsxzswz.github.io/2019/03/11/blog20190311/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/03/11/blog20190311/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年04月29日 - 09:04</p>
+  <p><span>最后更新:</span>2019年04月29日 - 13:04</p>
+  <p><span>原始链接:</span><a href="/2019/04/29/blog20190429/" title="SpringCloud分布式开发理解">https://jsxzswz.github.io/2019/04/29/blog20190429/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/04/29/blog20190429/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -701,11 +677,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
           
-            <a href="/tags/线程/" rel="tag"><i class="fa fa-tag"></i> 线程</a>
-          
-            <a href="/tags/线程池/" rel="tag"><i class="fa fa-tag"></i> 线程池</a>
+            <a href="/tags/SpringCloud/" rel="tag"><i class="fa fa-tag"></i> SpringCloud</a>
           
         </div>
       
@@ -730,8 +704,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/25/blog20190225/" rel="next" title="Java语言基础">
-                <i class="fa fa-chevron-left"></i> Java语言基础
+              <a href="/2019/03/11/blog20190311/" rel="next" title="java线程及线程池介绍">
+                <i class="fa fa-chevron-left"></i> java线程及线程池介绍
               </a>
             
           </div>
@@ -739,10 +713,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/blog20190429/" rel="prev" title="SpringCloud分布式开发理解">
-                SpringCloud分布式开发理解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -930,7 +900,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程的作用"><span class="nav-number">2.</span> <span class="nav-text">多线程的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程的使用场景"><span class="nav-number">3.</span> <span class="nav-text">多线程的使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java中的多线程"><span class="nav-number">4.</span> <span class="nav-text">java中的多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java中简单的实现多线程的方式"><span class="nav-number">4.1.</span> <span class="nav-text">java中简单的实现多线程的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java线程的状态"><span class="nav-number">4.2.</span> <span class="nav-text">java线程的状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java中的线程池（ThreadPoolExecutor）"><span class="nav-number">5.</span> <span class="nav-text">java中的线程池（ThreadPoolExecutor）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要引入线程池"><span class="nav-number">5.1.</span> <span class="nav-text">为什么要引入线程池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java线程池各参数介绍"><span class="nav-number">5.2.</span> <span class="nav-text">java线程池各参数介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring中线程池的使用"><span class="nav-number">6.</span> <span class="nav-text">Spring中线程池的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xml文件配置"><span class="nav-number">6.1.</span> <span class="nav-text">xml文件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java程序中配置"><span class="nav-number">6.2.</span> <span class="nav-text">java程序中配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附：常用参数总结"><span class="nav-number">7.</span> <span class="nav-text">附：常用参数总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPoolExecutor的重要参数"><span class="nav-number">7.1.</span> <span class="nav-text">ThreadPoolExecutor的重要参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPoolExecutor执行顺序"><span class="nav-number">7.2.</span> <span class="nav-text">ThreadPoolExecutor执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何设置参数"><span class="nav-number">7.3.</span> <span class="nav-text">如何设置参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">8.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回到”五大神兽”"><span class="nav-number">2.</span> <span class="nav-text">回到”五大神兽”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eureka"><span class="nav-number">3.</span> <span class="nav-text">Eureka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ribbon"><span class="nav-number">4.</span> <span class="nav-text">Ribbon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feign"><span class="nav-number">5.</span> <span class="nav-text">Feign</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hystrix"><span class="nav-number">6.</span> <span class="nav-text">Hystrix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zuul"><span class="nav-number">7.</span> <span class="nav-text">Zuul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringCloudConfig"><span class="nav-number">8.</span> <span class="nav-text">SpringCloudConfig</span></a></li></ol></div>
             
 
           </div>
