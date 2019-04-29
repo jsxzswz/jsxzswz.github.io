@@ -121,7 +121,7 @@
 <meta property="og:description" content="前言谈到SpringCloud最新接触到的可能就是那五大”神兽”,之前最先接触分布式开发是通过dubbo的RPC远程过程调用，而dubbo给我得感觉就是：虽然所有的主机物理上分布了，但是对于用户而言就仿佛是一个整体。而对我们的java开发人员而言，分布式开发的意义又是什么呢？也就是说哪里需要去使用分布式开发呢，其实在任何一个项目里面（MVC设计模式），业务操作是最为核心的部分，而所有项目之中你的业">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://jsxzswz.github.io/images/springCloud.png">
-<meta property="og:updated_time" content="2019-04-29T05:57:45.818Z">
+<meta property="og:updated_time" content="2019-04-29T06:04:43.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud分布式开发理解">
 <meta name="twitter:description" content="前言谈到SpringCloud最新接触到的可能就是那五大”神兽”,之前最先接触分布式开发是通过dubbo的RPC远程过程调用，而dubbo给我得感觉就是：虽然所有的主机物理上分布了，但是对于用户而言就仿佛是一个整体。而对我们的java开发人员而言，分布式开发的意义又是什么呢？也就是说哪里需要去使用分布式开发呢，其实在任何一个项目里面（MVC设计模式），业务操作是最为核心的部分，而所有项目之中你的业">
@@ -486,7 +486,8 @@
 <h2 id="Eureka"><a href="#Eureka" class="headerlink" title="Eureka"></a>Eureka</h2><p>一个RESTful风格的服务，用来定位运行在业务流程管理开发平台(AWS Enterprise BPM Platform)层的中间层服务。</p>
 <ul>
 <li>Eureka服务器用作服务的注册中心。(对比dubbo的注册中心：zk redis等);</li>
-<li>Eureka客户端其实就是一个java客户端，负责与服务器的交互，用作轮询负责均衡，故障切换支持等。<br>Netflix在其生产环境中使用的是另外的客户端，它提供基于流量、资源利用率以及出错状态的加权负载均衡。</li>
+<li>Eureka客户端其实就是一个java客户端，负责与服务器的交互，用作轮询负责均衡，故障切换支持等。</li>
+<li>Netflix在其生产环境中使用的是另外的客户端，它提供基于流量、资源利用率以及出错状态的加权负载均衡。</li>
 </ul>
 <p>注册中心服务器:</p>
 <p>依赖：</p>
@@ -507,7 +508,10 @@
 <li>简单轮询负载均衡</li>
 <li>加权响应时间负载均衡</li>
 <li>区域感知轮询负载均衡</li>
-<li>随机负载均衡<br>Ribbon中还包括一下功能:</li>
+<li>随机负载均衡</li>
+</ul>
+<p>Ribbon中还包括一下功能:</p>
+<ul>
 <li>易于与服务发现组件（比如Netflix的Eureka）集成</li>
 <li>使用Archaius完成运行时配置</li>
 <li>使用JMX暴露运维指标，使用Servo发布</li>
@@ -581,8 +585,8 @@
 <ul>
 <li>dev开发环境配置文件</li>
 <li>test测试环境</li>
-<li>pro正式环境<br>spring.cloud.config.serviceId 服务名称<br>http请求地址和资源文件映射如下:</li>
 </ul>
+<p>spring.cloud.config.serviceId 服务名称<br>http请求地址和资源文件映射如下:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/&#123;application&#125;/&#123;profile&#125;[/&#123;label&#125;]</span><br><span class="line">/&#123;application&#125;-&#123;profile&#125;.yml</span><br><span class="line">/&#123;label&#125;/&#123;application&#125;-&#123;profile&#125;.yml</span><br><span class="line">/&#123;application&#125;-&#123;profile&#125;.properties</span><br><span class="line">/&#123;label&#125;/&#123;application&#125;-&#123;profile&#125;.properties</span><br></pre></td></tr></table></figure>
 <p>参考链接：<a href="https://gitee.com/liudongyang/SpringCloudLearning" target="_blank" rel="noopener">网络大神方志鹏的帖子</a>  <a href="https://www.cnblogs.com/ldy-blogs/p/9264102.html" target="_blank" rel="noopener">SpringCloud分布式开发理解</a></p>
 
@@ -615,7 +619,7 @@
   <p><span>本文标题:</span><a href="/2019/04/29/blog20190429/">SpringCloud分布式开发理解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
   <p><span>发布时间:</span>2019年04月29日 - 09:04</p>
-  <p><span>最后更新:</span>2019年04月29日 - 13:04</p>
+  <p><span>最后更新:</span>2019年04月29日 - 14:04</p>
   <p><span>原始链接:</span><a href="/2019/04/29/blog20190429/" title="SpringCloud分布式开发理解">https://jsxzswz.github.io/2019/04/29/blog20190429/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/04/29/blog20190429/" aria-label="复制成功！"></i></span>
   </p>
