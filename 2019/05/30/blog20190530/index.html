@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-31T07:21:18.950Z">
+<meta property="og:updated_time" content="2019-05-31T07:30:47.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令之文件和目录处理命令">
 <meta name="twitter:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">本文字数&#58;</span>
                 
                 <span title="本文字数">
-                  1.2k
+                  1.1k
                 </span>
               
 
@@ -471,7 +471,7 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，这才是正确的学习方法。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，这才是正确的学习方法。本文主要讲解了Linux系统中的文件和目录处理命令！</p>
 <a id="more"></a>
 <h2 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h2><table>
 <thead>
@@ -479,7 +479,6 @@
 <th style="text-align:center">命令名称</th>
 <th style="text-align:center">英文原意</th>
 <th style="text-align:center">命令所在路径</th>
-<th style="text-align:center">执行权限</th>
 <th style="text-align:center">功能描述</th>
 <th style="text-align:center">语法</th>
 </tr>
@@ -489,7 +488,6 @@
 <td style="text-align:center">ls</td>
 <td style="text-align:center">list</td>
 <td style="text-align:center">/bin/ls</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示目录文件</td>
 <td style="text-align:center">ls 选项【-ald】【文件或目录】</td>
 </tr>
@@ -497,15 +495,13 @@
 <td style="text-align:center">mkdir</td>
 <td style="text-align:center">make directoriesc</td>
 <td style="text-align:center">/bin/mkdir</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">创建新目录</td>
 <td style="text-align:center">mkdir 选项【-p】【目录名】</td>
 </tr>
 <tr>
 <td style="text-align:center">cd</td>
 <td style="text-align:center">change directory</td>
-<td style="text-align:center">shell 内置命令</td>
-<td style="text-align:center">所有用户</td>
+<td style="text-align:center">shell内置命令</td>
 <td style="text-align:center">切换目录</td>
 <td style="text-align:center">cd【目录名】</td>
 </tr>
@@ -513,7 +509,6 @@
 <td style="text-align:center">pwd</td>
 <td style="text-align:center">print working directory</td>
 <td style="text-align:center">/bin/pwd</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示当前目录</td>
 <td style="text-align:center">pwd</td>
 </tr>
@@ -521,15 +516,13 @@
 <td style="text-align:center">rmdir</td>
 <td style="text-align:center">remove empty directories</td>
 <td style="text-align:center">/bin/rmdir</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">删除空目录</td>
-<td style="text-align:center">rmdir 【空目录名】</td>
+<td style="text-align:center">rmdir【空目录名】</td>
 </tr>
 <tr>
 <td style="text-align:center">cp</td>
 <td style="text-align:center">copy</td>
 <td style="text-align:center">/bin/cp</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">复制文件或目录</td>
 <td style="text-align:center">cp 选项【-rp】【原文件或目录】【目标目录】</td>
 </tr>
@@ -537,7 +530,6 @@
 <td style="text-align:center">mv</td>
 <td style="text-align:center">move</td>
 <td style="text-align:center">/bin/mv</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">剪切文件、改名</td>
 <td style="text-align:center">mv【原文件或目录】【目标目录】</td>
 </tr>
@@ -545,7 +537,6 @@
 <td style="text-align:center">rm</td>
 <td style="text-align:center">remove</td>
 <td style="text-align:center">/bin/rm</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">删除文件</td>
 <td style="text-align:center">rm 选项【-rf】【文件或目录】</td>
 </tr>
@@ -565,7 +556,6 @@
 <th style="text-align:center">命令名称</th>
 <th style="text-align:center">英文原意</th>
 <th style="text-align:center">命令所在路径</th>
-<th style="text-align:center">执行权限</th>
 <th style="text-align:center">功能描述</th>
 <th style="text-align:center">语法</th>
 </tr>
@@ -575,31 +565,27 @@
 <td style="text-align:center">touch</td>
 <td style="text-align:center">touch</td>
 <td style="text-align:center">/bin/touch</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">创建空文件</td>
-<td style="text-align:center">touch 【文件名】</td>
+<td style="text-align:center">touch【文件名】</td>
 </tr>
 <tr>
 <td style="text-align:center">cat</td>
 <td style="text-align:center">cat</td>
 <td style="text-align:center">/bin/cat</td>
-<td style="text-align:center">所有用户</td>
-<td style="text-align:center">显示文件内容（只能显示内容较少的文件）</td>
+<td style="text-align:center">显示文件内容</td>
 <td style="text-align:center">cat 选项【-n】【文件名】</td>
 </tr>
 <tr>
 <td style="text-align:center">tac</td>
 <td style="text-align:center">tac</td>
 <td style="text-align:center">/bin/tac</td>
-<td style="text-align:center">所有用户</td>
-<td style="text-align:center">显示文件内容（只能显示内容较少的文件）</td>
+<td style="text-align:center">显示文件内容</td>
 <td style="text-align:center">tac【文件名】</td>
 </tr>
 <tr>
 <td style="text-align:center">more</td>
 <td style="text-align:center">more</td>
 <td style="text-align:center">/bin/more</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">分页显示文件内容</td>
 <td style="text-align:center">more【文件名】</td>
 </tr>
@@ -607,15 +593,13 @@
 <td style="text-align:center">less</td>
 <td style="text-align:center">less</td>
 <td style="text-align:center">/usr/bin/less</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">分页显示文件内容</td>
-<td style="text-align:center">less 【文件名】</td>
+<td style="text-align:center">less【文件名】</td>
 </tr>
 <tr>
 <td style="text-align:center">head</td>
 <td style="text-align:center">head</td>
 <td style="text-align:center">/usr/bin/head</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示文件的前面几行</td>
 <td style="text-align:center">head 选项【-n】【文件名】</td>
 </tr>
@@ -623,7 +607,6 @@
 <td style="text-align:center">tail</td>
 <td style="text-align:center">tail</td>
 <td style="text-align:center">/usr/bin/tail</td>
-<td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示文件的后面几行</td>
 <td style="text-align:center">tail 选项【-n -f】【文件名】</td>
 </tr>
@@ -990,7 +973,7 @@
     
       <span class="post-meta-item-text">全站字数&#58;</span>
     
-    <span title="全站字数">32.4k</span>
+    <span title="全站字数">32.3k</span>
   
 </div>
 
