@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-31T07:12:37.358Z">
+<meta property="og:updated_time" content="2019-05-31T07:20:43.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令之文件搜索命令">
 <meta name="twitter:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">本文字数&#58;</span>
                 
                 <span title="本文字数">
-                  972
+                  825
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -471,7 +471,7 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，这才是正确的学习方法。Linux命令有很多，如果初学者就想全部记住这些命令的详细格式，会对我们产生很大的学习挫败性，还没记完这些命令，或许你已经丧失了学习Linux的热情了。所以接下来的几篇博客，我会详细讲解Linux常用命令的语法格式以及用法，大家记住大概的用法就行了，到时候不会可以回过头来查询。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，这才是正确的学习方法。</p>
 <a id="more"></a>
 <h2 id="文件搜索命令"><a href="#文件搜索命令" class="headerlink" title="文件搜索命令"></a>文件搜索命令</h2><table>
 <thead>
@@ -482,7 +482,6 @@
 <th style="text-align:center">执行权限</th>
 <th style="text-align:center">功能描述</th>
 <th style="text-align:center">语法</th>
-<th style="text-align:center">常用参数</th>
 </tr>
 </thead>
 <tbody>
@@ -493,7 +492,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">进行各种花式文件搜索</td>
 <td style="text-align:center">find【搜索范围】【匹配条件】</td>
-<td style="text-align:center">见下文</td>
 </tr>
 <tr>
 <td style="text-align:center">locate</td>
@@ -502,7 +500,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">在文件资料库中查找文件</td>
 <td style="text-align:center">locate【文件名】</td>
-<td style="text-align:center">-i 不区分大小写</td>
 </tr>
 <tr>
 <td style="text-align:center">which</td>
@@ -511,7 +508,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">搜索命令所在的目录及别名信息</td>
 <td style="text-align:center">which【命令】</td>
-<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center">whereis</td>
@@ -520,7 +516,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">搜索命令所在的目录及帮助文档路径</td>
 <td style="text-align:center">whereis【命令】</td>
-<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center">grep</td>
@@ -528,7 +523,6 @@
 <td style="text-align:center">/bin/grep</td>
 <td style="text-align:center">在文件中搜寻字符串匹配的行并输出</td>
 <td style="text-align:center">grep 选项【-iv】【指定字符串】【文件】</td>
-<td style="text-align:center">-i 不区分大小写 -v 排除指定字符串</td>
 </tr>
 </tbody>
 </table>
@@ -892,7 +886,7 @@
     
       <span class="post-meta-item-text">全站字数&#58;</span>
     
-    <span title="全站字数">33k</span>
+    <span title="全站字数">32.4k</span>
   
 </div>
 

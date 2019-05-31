@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-31T07:08:01.601Z">
+<meta property="og:updated_time" content="2019-05-31T07:21:18.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令之文件和目录处理命令">
 <meta name="twitter:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">本文字数&#58;</span>
                 
                 <span title="本文字数">
-                  1.6k
+                  1.2k
                 </span>
               
 
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -471,7 +471,7 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，这才是正确的学习方法。Linux命令有很多，如果初学者就想全部记住这些命令的详细格式，会对我们产生很大的学习挫败性，还没记完这些命令，或许你已经丧失了学习Linux的热情了。所以接下来的几篇博客，我会详细讲解Linux常用命令的语法格式以及用法，大家记住大概的用法就行了，到时候不会可以回过头来查询。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，这才是正确的学习方法。</p>
 <a id="more"></a>
 <h2 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h2><table>
 <thead>
@@ -482,7 +482,6 @@
 <th style="text-align:center">执行权限</th>
 <th style="text-align:center">功能描述</th>
 <th style="text-align:center">语法</th>
-<th style="text-align:center">常用参数</th>
 </tr>
 </thead>
 <tbody>
@@ -493,7 +492,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示目录文件</td>
 <td style="text-align:center">ls 选项【-ald】【文件或目录】</td>
-<td style="text-align:center">-a 显示所有文件，包括隐藏文件 -l 详细信息显示 -d 仅显示目录名，而不显示目录下的内容列表 -t 用文件和目录的更改时间排序；可以用第一个显示的文件判断最近修改的文件</td>
 </tr>
 <tr>
 <td style="text-align:center">mkdir</td>
@@ -502,7 +500,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">创建新目录</td>
 <td style="text-align:center">mkdir 选项【-p】【目录名】</td>
-<td style="text-align:center">-p 递归创建</td>
 </tr>
 <tr>
 <td style="text-align:center">cd</td>
@@ -511,7 +508,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">切换目录</td>
 <td style="text-align:center">cd【目录名】</td>
-<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center">pwd</td>
@@ -520,16 +516,14 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示当前目录</td>
 <td style="text-align:center">pwd</td>
-<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center">rmdir</td>
 <td style="text-align:center">remove empty directories</td>
 <td style="text-align:center">/bin/rmdir</td>
 <td style="text-align:center">所有用户</td>
-<td style="text-align:center">删除空目录（如果目录下存在文件则不能删除）</td>
+<td style="text-align:center">删除空目录</td>
 <td style="text-align:center">rmdir 【空目录名】</td>
-<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center">cp</td>
@@ -538,7 +532,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">复制文件或目录</td>
 <td style="text-align:center">cp 选项【-rp】【原文件或目录】【目标目录】</td>
-<td style="text-align:center">-r 复制目录 -p 保留文件属性</td>
 </tr>
 <tr>
 <td style="text-align:center">mv</td>
@@ -547,7 +540,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">剪切文件、改名</td>
 <td style="text-align:center">mv【原文件或目录】【目标目录】</td>
-<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center">rm</td>
@@ -556,7 +548,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">删除文件</td>
 <td style="text-align:center">rm 选项【-rf】【文件或目录】</td>
-<td style="text-align:center">-r 删除目录 -f 强制执行</td>
 </tr>
 </tbody>
 </table>
@@ -577,7 +568,6 @@
 <th style="text-align:center">执行权限</th>
 <th style="text-align:center">功能描述</th>
 <th style="text-align:center">语法</th>
-<th style="text-align:center">常用参数</th>
 </tr>
 </thead>
 <tbody>
@@ -588,7 +578,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">创建空文件</td>
 <td style="text-align:center">touch 【文件名】</td>
-<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center">cat</td>
@@ -597,7 +586,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示文件内容（只能显示内容较少的文件）</td>
 <td style="text-align:center">cat 选项【-n】【文件名】</td>
-<td style="text-align:center">-n  显示文件行号</td>
 </tr>
 <tr>
 <td style="text-align:center">tac</td>
@@ -606,7 +594,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示文件内容（只能显示内容较少的文件）</td>
 <td style="text-align:center">tac【文件名】</td>
-<td style="text-align:center"></td>
 </tr>
 <tr>
 <td style="text-align:center">more</td>
@@ -615,7 +602,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">分页显示文件内容</td>
 <td style="text-align:center">more【文件名】</td>
-<td style="text-align:center">（空格）或f 翻页（一页一页的往后显示）（Enter） 换行（一行一行的往后显示）q或Q退出</td>
 </tr>
 <tr>
 <td style="text-align:center">less</td>
@@ -624,7 +610,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">分页显示文件内容</td>
 <td style="text-align:center">less 【文件名】</td>
-<td style="text-align:center">（空格）或f 或PgDn 翻页（一页一页的往后显示）PgUp向前翻页（Enter） 换行或向下的箭头（一行一行的往后显示）向上的箭头（一行一行的往前显示）q或Q退出 输入/想搜索的字符，然后回车键</td>
 </tr>
 <tr>
 <td style="text-align:center">head</td>
@@ -633,7 +618,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示文件的前面几行</td>
 <td style="text-align:center">head 选项【-n】【文件名】</td>
-<td style="text-align:center">-n 指定显示的行数 不加 -n 默认显示前20行数据</td>
 </tr>
 <tr>
 <td style="text-align:center">tail</td>
@@ -642,7 +626,6 @@
 <td style="text-align:center">所有用户</td>
 <td style="text-align:center">显示文件的后面几行</td>
 <td style="text-align:center">tail 选项【-n -f】【文件名】</td>
-<td style="text-align:center">-n  指定显示的行数 -f 动态显示文件末尾内容</td>
 </tr>
 </tbody>
 </table>
@@ -1007,7 +990,7 @@
     
       <span class="post-meta-item-text">全站字数&#58;</span>
     
-    <span title="全站字数">33k</span>
+    <span title="全站字数">32.4k</span>
   
 </div>
 
