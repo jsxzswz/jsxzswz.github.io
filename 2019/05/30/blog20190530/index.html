@@ -99,7 +99,7 @@
 
 
 
-  <meta name="keywords" content="mysql,">
+  <meta name="keywords" content="Linux,">
 
 
 
@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="前言数据库存储引擎是数据库底层软件组织，数据库管理系统（DBMS）使用数据引擎进行创建、查询、更新和删除数据。不同的存储引擎提供不同的存储机制、索引技巧、锁定水平等功能，使用不同的存储引擎，还可以获得特定的功能。现在许多不同的数据库管理系统都支持多种不同的数据引擎,MySQL的核心就是存储引擎。在MySQL中的存储引擎有很多种，可以通过“SHOW ENGINES”语句来查看。下面重点关注InnoD">
-<meta name="keywords" content="mysql">
+<meta name="description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL常见的存储引擎">
-<meta property="og:url" content="https://jsxzswz.github.io/2019/01/04/blog20190104/index.html">
+<meta property="og:title" content="Linux常用命令之文件和目录处理命令">
+<meta property="og:url" content="https://jsxzswz.github.io/2019/05/30/blog20190530/index.html">
 <meta property="og:site_name" content="孙文正的Blog">
-<meta property="og:description" content="前言数据库存储引擎是数据库底层软件组织，数据库管理系统（DBMS）使用数据引擎进行创建、查询、更新和删除数据。不同的存储引擎提供不同的存储机制、索引技巧、锁定水平等功能，使用不同的存储引擎，还可以获得特定的功能。现在许多不同的数据库管理系统都支持多种不同的数据引擎,MySQL的核心就是存储引擎。在MySQL中的存储引擎有很多种，可以通过“SHOW ENGINES”语句来查看。下面重点关注InnoD">
+<meta property="og:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-20T08:19:44.434Z">
+<meta property="og:updated_time" content="2019-05-31T07:08:01.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL常见的存储引擎">
-<meta name="twitter:description" content="前言数据库存储引擎是数据库底层软件组织，数据库管理系统（DBMS）使用数据引擎进行创建、查询、更新和删除数据。不同的存储引擎提供不同的存储机制、索引技巧、锁定水平等功能，使用不同的存储引擎，还可以获得特定的功能。现在许多不同的数据库管理系统都支持多种不同的数据引擎,MySQL的核心就是存储引擎。在MySQL中的存储引擎有很多种，可以通过“SHOW ENGINES”语句来查看。下面重点关注InnoD">
+<meta name="twitter:title" content="Linux常用命令之文件和目录处理命令">
+<meta name="twitter:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
 
 
 
@@ -153,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="https://jsxzswz.github.io/2019/01/04/blog20190104/">
+  <link rel="canonical" href="https://jsxzswz.github.io/2019/05/30/blog20190530/">
 
 
 
 
 
-  <title>MySQL常见的存储引擎 | 孙文正的Blog</title>
+  <title>Linux常用命令之文件和目录处理命令 | 孙文正的Blog</title>
   
 
 
@@ -339,7 +339,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jsxzswz.github.io/2019/01/04/blog20190104/">
+    <link itemprop="mainEntityOfPage" href="https://jsxzswz.github.io/2019/05/30/blog20190530/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="孙文正">
@@ -356,7 +356,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL常见的存储引擎</h1>
+          <h1 class="post-title" itemprop="name headline">Linux常用命令之文件和目录处理命令</h1>
         
 
         <div class="post-meta">
@@ -368,8 +368,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-04T17:21:27+08:00">
-                2019-01-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-30T16:33:03+08:00">
+                2019-05-30
               </time>
             
 
@@ -391,8 +391,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -408,7 +408,7 @@
 
           
           
-             <span id="/2019/01/04/blog20190104/" class="leancloud_visitors" data-flag-title="MySQL常见的存储引擎">
+             <span id="/2019/05/30/blog20190530/" class="leancloud_visitors" data-flag-title="Linux常用命令之文件和目录处理命令">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -471,83 +471,191 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>数据库存储引擎是数据库底层软件组织，数据库管理系统（DBMS）使用数据引擎进行创建、查询、更新和删除数据。不同的存储引擎提供不同的存储机制、索引技巧、锁定水平等功能，使用不同的存储引擎，还可以获得特定的功能。现在许多不同的数据库管理系统都支持多种不同的数据引擎,MySQL的核心就是存储引擎。在MySQL中的存储引擎有很多种，可以通过“SHOW ENGINES”语句来查看。下面重点关注InnoDB、MyISAM、MEMORY这三种。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，这才是正确的学习方法。Linux命令有很多，如果初学者就想全部记住这些命令的详细格式，会对我们产生很大的学习挫败性，还没记完这些命令，或许你已经丧失了学习Linux的热情了。所以接下来的几篇博客，我会详细讲解Linux常用命令的语法格式以及用法，大家记住大概的用法就行了，到时候不会可以回过头来查询。</p>
 <a id="more"></a>
-<h2 id="InnoDB存储引擎"><a href="#InnoDB存储引擎" class="headerlink" title="InnoDB存储引擎"></a>InnoDB存储引擎</h2><ul>
-<li>InnoDB给MySQL的表提供了事务处理、回滚、崩溃修复能力和多版本并发控制的事务安全。在MySQL从3.23.34a开始包含InnnoDB。它是MySQL上第一个提供外键约束的表引擎。而且InnoDB对事务处理的能力，也是其他存储引擎不能比拟的。靠后版本的MySQL的默认存储引擎就是InnoDB。</li>
-<li>InnoDB存储引擎总支持AUTO_INCREMENT。自动增长列的值不能为空，并且值必须唯一。MySQL中规定自增列必须为主键。在插入值的时候，如果自动增长列不输入值，则插入的值为自动增长后的值；如果输入的值为0或空（NULL），则插入的值也是自动增长后的值；如果插入某个确定的值，且该值在前面没有出现过，就可以直接插入。</li>
-<li>InnoDB还支持外键（FOREIGN KEY）。外键所在的表叫做子表，外键所依赖（REFERENCES）的表叫做父表。父表中被字表外键关联的字段必须为主键。当删除、更新父表中的某条信息时，子表也必须有相应的改变，这是数据库的参照完整性规则。</li>
-<li>InnoDB中，创建的表的表结构存储在.frm文件中。数据和索引存储在innodb_data_home_dir和innodb_data_file_path定义的表空间中。</li>
-<li>InnoDB的优势在于提供了良好的事务处理、崩溃修复能力和并发控制。缺点是读写效率较差，占用的数据空间相对较大。</li>
-</ul>
-<h2 id="MyISAM存储引擎"><a href="#MyISAM存储引擎" class="headerlink" title="MyISAM存储引擎"></a>MyISAM存储引擎</h2><ul>
-<li>MyISAM是MySQL中常见的存储引擎，曾经是MySQL的默认存储引擎。MyISAM是基于ISAM引擎发展起来的，增加了许多有用的扩展。</li>
-<li>MyISAM的表存储成3个文件。文件的名字与表名相同。拓展名为frm、MYD、MYI。其实，frm文件存储表的结构；MYD文件存储数据，是MYData的缩写；MYI文件存储索引，是MYIndex的缩写。</li>
-<li>基于MyISAM存储引擎的表支持3种不同的存储格式。包括静态型、动态型和压缩型。其中，静态型是MyISAM的默认存储格式，它的字段是固定长度的；动态型包含变长字段，记录的长度不是固定的；压缩型需要用到myisampack工具，占用的磁盘空间较小。</li>
-<li>MyISAM的优势在于占用空间小，处理速度快。缺点是不支持事务的完整性和并发性。</li>
-</ul>
-<h2 id="MEMORY存储引擎"><a href="#MEMORY存储引擎" class="headerlink" title="MEMORY存储引擎"></a>MEMORY存储引擎</h2><ul>
-<li>MEMORY是MySQL中一类特殊的存储引擎。它使用存储在内存中的内容来创建表，而且数据全部放在内存中。这些特性与前面的两个很不同。</li>
-<li>每个基于MEMORY存储引擎的表实际对应一个磁盘文件。该文件的文件名与表名相同，类型为frm类型。该文件中只存储表的结构。而其数据文件，都是存储在内存中，这样有利于数据的快速处理，提高整个表的效率。值得注意的是，服务器需要有足够的内存来维持MEMORY存储引擎的表的使用。如果不需要了，可以释放内存，甚至删除不需要的表。</li>
-<li>MEMORY默认使用哈希索引。速度比使用B型树索引快。当然如果你想用B型树索引，可以在创建索引时指定。</li>
-<li>注意，MEMORY用到的很少，因为它是把数据存到内存中，如果内存出现异常就会影响数据。如果重启或者关机，所有数据都会消失。因此，基于MEMORY的表的生命周期很短，一般是一次性的。</li>
-</ul>
-<h2 id="存储引擎的选择"><a href="#存储引擎的选择" class="headerlink" title="存储引擎的选择"></a>存储引擎的选择</h2><p>不同的存储引擎都有各自的特点，以适应不同的需求，如下表所示：</p>
-<table>
+<h2 id="目录处理命令"><a href="#目录处理命令" class="headerlink" title="目录处理命令"></a>目录处理命令</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">特性</th>
-<th style="text-align:center">InnoDB</th>
-<th style="text-align:center">MyISAM</th>
-<th style="text-align:center">MEMORY</th>
+<th style="text-align:center">命令名称</th>
+<th style="text-align:center">英文原意</th>
+<th style="text-align:center">命令所在路径</th>
+<th style="text-align:center">执行权限</th>
+<th style="text-align:center">功能描述</th>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">常用参数</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">存储限制</td>
-<td style="text-align:center">支持</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">无</td>
+<td style="text-align:center">ls</td>
+<td style="text-align:center">list</td>
+<td style="text-align:center">/bin/ls</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">显示目录文件</td>
+<td style="text-align:center">ls 选项【-ald】【文件或目录】</td>
+<td style="text-align:center">-a 显示所有文件，包括隐藏文件 -l 详细信息显示 -d 仅显示目录名，而不显示目录下的内容列表 -t 用文件和目录的更改时间排序；可以用第一个显示的文件判断最近修改的文件</td>
 </tr>
 <tr>
-<td style="text-align:center">事物安全</td>
-<td style="text-align:center">64TB</td>
-<td style="text-align:center">有</td>
-<td style="text-align:center">有</td>
+<td style="text-align:center">mkdir</td>
+<td style="text-align:center">make directoriesc</td>
+<td style="text-align:center">/bin/mkdir</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">创建新目录</td>
+<td style="text-align:center">mkdir 选项【-p】【目录名】</td>
+<td style="text-align:center">-p 递归创建</td>
 </tr>
 <tr>
-<td style="text-align:center">空间使用</td>
-<td style="text-align:center">高</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">低</td>
+<td style="text-align:center">cd</td>
+<td style="text-align:center">change directory</td>
+<td style="text-align:center">shell 内置命令</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">切换目录</td>
+<td style="text-align:center">cd【目录名】</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">内存使用</td>
-<td style="text-align:center">高</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">高</td>
+<td style="text-align:center">pwd</td>
+<td style="text-align:center">print working directory</td>
+<td style="text-align:center">/bin/pwd</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">显示当前目录</td>
+<td style="text-align:center">pwd</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">插入速度</td>
-<td style="text-align:center">低</td>
-<td style="text-align:center">高</td>
-<td style="text-align:center">高</td>
+<td style="text-align:center">rmdir</td>
+<td style="text-align:center">remove empty directories</td>
+<td style="text-align:center">/bin/rmdir</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">删除空目录（如果目录下存在文件则不能删除）</td>
+<td style="text-align:center">rmdir 【空目录名】</td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">外键支持</td>
-<td style="text-align:center">支持</td>
-<td style="text-align:center">无</td>
-<td style="text-align:center">无</td>
+<td style="text-align:center">cp</td>
+<td style="text-align:center">copy</td>
+<td style="text-align:center">/bin/cp</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">复制文件或目录</td>
+<td style="text-align:center">cp 选项【-rp】【原文件或目录】【目标目录】</td>
+<td style="text-align:center">-r 复制目录 -p 保留文件属性</td>
+</tr>
+<tr>
+<td style="text-align:center">mv</td>
+<td style="text-align:center">move</td>
+<td style="text-align:center">/bin/mv</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">剪切文件、改名</td>
+<td style="text-align:center">mv【原文件或目录】【目标目录】</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">rm</td>
+<td style="text-align:center">remove</td>
+<td style="text-align:center">/bin/rm</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">删除文件</td>
+<td style="text-align:center">rm 选项【-rf】【文件或目录】</td>
+<td style="text-align:center">-r 删除目录 -f 强制执行</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>InnoDB：支持事务处理，支持外键，支持崩溃修复能力和并发控制。如果需要对事务的完整性要求比较高（比如银行），要求实现并发控制（比如售票），那选择InnoDB有很大的优势。如果需要频繁的更新、删除操作的数据库，也可以选择InnoDB，因为支持事务的提交（commit）和回滚（rollback）。</li>
-<li>MyISAM：插入数据快，空间和内存使用比较低。如果表主要是用于插入新记录和读出记录，那么选择MyISAM能实现处理高效率。如果应用的完整性、并发性要求比 较低，也可以使用。</li>
-<li>MEMORY：所有的数据都在内存中，数据的处理速度快，但是安全性不高。如果需要很快的读写速度，对数据的安全性要求较低，可以选择MEMOEY。它对表的大小有要求，不能建立太大的表。所以，这类数据库只使用在相对较小的数据库表。</li>
-<li>注意，同一个数据库也可以使用多种存储引擎的表。如果一个表要求比较高的事务处理，可以选择InnoDB。这个数据库中可以将查询要求比较高的表选择MyISAM存储。如果该数据库需要一个用于查询的临时表，可以选择MEMORY存储引擎。</li>
-</ul>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>使用哪一种引擎需要灵活选择，一个数据库中多个表可以使用不同引擎以满足各种性能和实际需求，使用合适的存储引擎，将会提高整个数据库的性能。MySQL常见的存储引擎就介绍到这里了！</p>
+<h3 id="显示目录文件命令：ls"><a href="#显示目录文件命令：ls" class="headerlink" title="显示目录文件命令：ls"></a>显示目录文件命令：ls</h3><p>例子待定</p>
+<h3 id="创建目录命令：mkdir"><a href="#创建目录命令：mkdir" class="headerlink" title="创建目录命令：mkdir"></a>创建目录命令：mkdir</h3><p>例子待定</p>
+<h3 id="切换目录命令：cd"><a href="#切换目录命令：cd" class="headerlink" title="切换目录命令：cd"></a>切换目录命令：cd</h3><p>例子待定</p>
+<h3 id="显示当前目录命令：pwd"><a href="#显示当前目录命令：pwd" class="headerlink" title="显示当前目录命令：pwd"></a>显示当前目录命令：pwd</h3><p>例子待定</p>
+<h3 id="删除空目录命令：rmdir"><a href="#删除空目录命令：rmdir" class="headerlink" title="删除空目录命令：rmdir"></a>删除空目录命令：rmdir</h3><p>例子待定</p>
+<h3 id="复制文件或目录命令：cp"><a href="#复制文件或目录命令：cp" class="headerlink" title="复制文件或目录命令：cp"></a>复制文件或目录命令：cp</h3><p>例子待定</p>
+<h3 id="剪切文件或目录命令：mv"><a href="#剪切文件或目录命令：mv" class="headerlink" title="剪切文件或目录命令：mv"></a>剪切文件或目录命令：mv</h3><p>例子待定</p>
+<h3 id="删除文件或目录命令：rm"><a href="#删除文件或目录命令：rm" class="headerlink" title="删除文件或目录命令：rm"></a>删除文件或目录命令：rm</h3><p>例子待定</p>
+<h2 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">命令名称</th>
+<th style="text-align:center">英文原意</th>
+<th style="text-align:center">命令所在路径</th>
+<th style="text-align:center">执行权限</th>
+<th style="text-align:center">功能描述</th>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">常用参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">touch</td>
+<td style="text-align:center">touch</td>
+<td style="text-align:center">/bin/touch</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">创建空文件</td>
+<td style="text-align:center">touch 【文件名】</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">cat</td>
+<td style="text-align:center">cat</td>
+<td style="text-align:center">/bin/cat</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">显示文件内容（只能显示内容较少的文件）</td>
+<td style="text-align:center">cat 选项【-n】【文件名】</td>
+<td style="text-align:center">-n  显示文件行号</td>
+</tr>
+<tr>
+<td style="text-align:center">tac</td>
+<td style="text-align:center">tac</td>
+<td style="text-align:center">/bin/tac</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">显示文件内容（只能显示内容较少的文件）</td>
+<td style="text-align:center">tac【文件名】</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">more</td>
+<td style="text-align:center">more</td>
+<td style="text-align:center">/bin/more</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">分页显示文件内容</td>
+<td style="text-align:center">more【文件名】</td>
+<td style="text-align:center">（空格）或f 翻页（一页一页的往后显示）（Enter） 换行（一行一行的往后显示）q或Q退出</td>
+</tr>
+<tr>
+<td style="text-align:center">less</td>
+<td style="text-align:center">less</td>
+<td style="text-align:center">/usr/bin/less</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">分页显示文件内容</td>
+<td style="text-align:center">less 【文件名】</td>
+<td style="text-align:center">（空格）或f 或PgDn 翻页（一页一页的往后显示）PgUp向前翻页（Enter） 换行或向下的箭头（一行一行的往后显示）向上的箭头（一行一行的往前显示）q或Q退出 输入/想搜索的字符，然后回车键</td>
+</tr>
+<tr>
+<td style="text-align:center">head</td>
+<td style="text-align:center">head</td>
+<td style="text-align:center">/usr/bin/head</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">显示文件的前面几行</td>
+<td style="text-align:center">head 选项【-n】【文件名】</td>
+<td style="text-align:center">-n 指定显示的行数 不加 -n 默认显示前20行数据</td>
+</tr>
+<tr>
+<td style="text-align:center">tail</td>
+<td style="text-align:center">tail</td>
+<td style="text-align:center">/usr/bin/tail</td>
+<td style="text-align:center">所有用户</td>
+<td style="text-align:center">显示文件的后面几行</td>
+<td style="text-align:center">tail 选项【-n -f】【文件名】</td>
+<td style="text-align:center">-n  指定显示的行数 -f 动态显示文件末尾内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="创建空文件命令：touch"><a href="#创建空文件命令：touch" class="headerlink" title="创建空文件命令：touch"></a>创建空文件命令：touch</h3><p>例子待定</p>
+<h3 id="显示文件内容命令（适合内容较少的文件）：cat"><a href="#显示文件内容命令（适合内容较少的文件）：cat" class="headerlink" title="显示文件内容命令（适合内容较少的文件）：cat"></a>显示文件内容命令（适合内容较少的文件）：cat</h3><p>例子待定</p>
+<h3 id="反向显示文件内容命令（适合内容较少的文件）：tac"><a href="#反向显示文件内容命令（适合内容较少的文件）：tac" class="headerlink" title="反向显示文件内容命令（适合内容较少的文件）：tac"></a>反向显示文件内容命令（适合内容较少的文件）：tac</h3><p>例子待定</p>
+<h3 id="分页显示文件内容命令（不能向前翻页）：more"><a href="#分页显示文件内容命令（不能向前翻页）：more" class="headerlink" title="分页显示文件内容命令（不能向前翻页）：more"></a>分页显示文件内容命令（不能向前翻页）：more</h3><p>例子待定</p>
+<h3 id="分页显示文件内容命令（可以前后翻页）：less"><a href="#分页显示文件内容命令（可以前后翻页）：less" class="headerlink" title="分页显示文件内容命令（可以前后翻页）：less"></a>分页显示文件内容命令（可以前后翻页）：less</h3><p>例子待定</p>
+<h3 id="显示文件内容命令（指定行数）：head"><a href="#显示文件内容命令（指定行数）：head" class="headerlink" title="显示文件内容命令（指定行数）：head"></a>显示文件内容命令（指定行数）：head</h3><p>例子待定</p>
+<h3 id="反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail"><a href="#反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail" class="headerlink" title="反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail"></a>反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail</h3><p>例子待定</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇博客我们主要讲解了Linux系统中的文件和目录处理命令，显示目录文件信息 ls 这是我们最常用的，然后创建目录命令 mkdir,切换目录命令 cd，显示当前目录 pwd，删除空目录命令 rmdir，这个命令用的不多，如果我们想删除目录可以用 rm 命令，注意 rm 如果加上 -f 参数，那将没有提示，直接将文件从系统中删除，需要特别注意，以免删除系统文件。然后我们接着介绍了复制文件或目录命令 cp，剪切文件或目录命令 mv，注意mv命令在剪切后可以直接更改文件或目录名称。</p>
+<p>接着我们介绍了几个文件处理命令，创建空文件 touch,显示文件内容的命令有很多，我们也不需要记住那么多，首先less命令能显现文件内容比较多的文件，而且能前后翻页显示。再就是如果我们需要动态监视文件内容的变化，比如某个日志文件，我们可以通过 tail 加上-f参数动态显示文件末尾的内容。</p>
+<p>参考链接：<a href="https://www.cnblogs.com/ysocean/p/7712412.html" target="_blank" rel="noopener">Linux常用命令之文件和目录处理命令</a></p>
 
       
     </div>
@@ -575,12 +683,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/01/04/blog20190104/">MySQL常见的存储引擎</a></p>
+  <p><span>本文标题:</span><a href="/2019/05/30/blog20190530/">Linux常用命令之文件和目录处理命令</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
-  <p><span>发布时间:</span>2019年01月04日 - 17:01</p>
-  <p><span>最后更新:</span>2019年02月20日 - 16:02</p>
-  <p><span>原始链接:</span><a href="/2019/01/04/blog20190104/" title="MySQL常见的存储引擎">https://jsxzswz.github.io/2019/01/04/blog20190104/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/01/04/blog20190104/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年05月30日 - 16:05</p>
+  <p><span>最后更新:</span>2019年05月31日 - 15:05</p>
+  <p><span>原始链接:</span><a href="/2019/05/30/blog20190530/" title="Linux常用命令之文件和目录处理命令">https://jsxzswz.github.io/2019/05/30/blog20190530/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/05/30/blog20190530/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -640,7 +748,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           
         </div>
       
@@ -665,8 +773,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/04/blog20181214/" rel="next" title="Sublime Text3安装教程">
-                <i class="fa fa-chevron-left"></i> Sublime Text3安装教程
+              <a href="/2019/04/29/blog20190429/" rel="next" title="SpringCloud分布式开发理解">
+                <i class="fa fa-chevron-left"></i> SpringCloud分布式开发理解
               </a>
             
           </div>
@@ -675,8 +783,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/14/blog20190114/" rel="prev" title="MySQL数据类型">
-                MySQL数据类型 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/31/blog20190531/" rel="prev" title="Linux常用命令之文件搜索命令">
+                Linux常用命令之文件搜索命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -865,7 +973,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#InnoDB存储引擎"><span class="nav-number">2.</span> <span class="nav-text">InnoDB存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MyISAM存储引擎"><span class="nav-number">3.</span> <span class="nav-text">MyISAM存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MEMORY存储引擎"><span class="nav-number">4.</span> <span class="nav-text">MEMORY存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储引擎的选择"><span class="nav-number">5.</span> <span class="nav-text">存储引擎的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结尾"><span class="nav-number">6.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录处理命令"><span class="nav-number">2.</span> <span class="nav-text">目录处理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#显示目录文件命令：ls"><span class="nav-number">2.1.</span> <span class="nav-text">显示目录文件命令：ls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建目录命令：mkdir"><span class="nav-number">2.2.</span> <span class="nav-text">创建目录命令：mkdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换目录命令：cd"><span class="nav-number">2.3.</span> <span class="nav-text">切换目录命令：cd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示当前目录命令：pwd"><span class="nav-number">2.4.</span> <span class="nav-text">显示当前目录命令：pwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除空目录命令：rmdir"><span class="nav-number">2.5.</span> <span class="nav-text">删除空目录命令：rmdir</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制文件或目录命令：cp"><span class="nav-number">2.6.</span> <span class="nav-text">复制文件或目录命令：cp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#剪切文件或目录命令：mv"><span class="nav-number">2.7.</span> <span class="nav-text">剪切文件或目录命令：mv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除文件或目录命令：rm"><span class="nav-number">2.8.</span> <span class="nav-text">删除文件或目录命令：rm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件处理命令"><span class="nav-number">3.</span> <span class="nav-text">文件处理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建空文件命令：touch"><span class="nav-number">3.1.</span> <span class="nav-text">创建空文件命令：touch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示文件内容命令（适合内容较少的文件）：cat"><span class="nav-number">3.2.</span> <span class="nav-text">显示文件内容命令（适合内容较少的文件）：cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向显示文件内容命令（适合内容较少的文件）：tac"><span class="nav-number">3.3.</span> <span class="nav-text">反向显示文件内容命令（适合内容较少的文件）：tac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分页显示文件内容命令（不能向前翻页）：more"><span class="nav-number">3.4.</span> <span class="nav-text">分页显示文件内容命令（不能向前翻页）：more</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分页显示文件内容命令（可以前后翻页）：less"><span class="nav-number">3.5.</span> <span class="nav-text">分页显示文件内容命令（可以前后翻页）：less</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示文件内容命令（指定行数）：head"><span class="nav-number">3.6.</span> <span class="nav-text">显示文件内容命令（指定行数）：head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail"><span class="nav-number">3.7.</span> <span class="nav-text">反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
