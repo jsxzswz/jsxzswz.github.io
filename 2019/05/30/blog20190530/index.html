@@ -120,10 +120,19 @@
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-31T07:30:47.654Z">
+<meta property="og:image" content="https://jsxzswz.github.io/images/ls.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/mkdir.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/cd.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/cp.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/mv.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/rm.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/cat.png">
+<meta property="og:image" content="https://jsxzswz.github.io/images/tail.png">
+<meta property="og:updated_time" content="2019-06-10T06:13:01.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令之文件和目录处理命令">
 <meta name="twitter:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。当我们使用的多了，会不知不觉的记住这些命令，">
+<meta name="twitter:image" content="https://jsxzswz.github.io/images/ls.png">
 
 
 
@@ -434,7 +443,7 @@
                   <span class="post-meta-item-text">本文字数&#58;</span>
                 
                 <span title="本文字数">
-                  1.1k
+                  1.6k
                 </span>
               
 
@@ -450,7 +459,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -542,14 +551,46 @@
 </tr>
 </tbody>
 </table>
-<h3 id="显示目录文件命令：ls"><a href="#显示目录文件命令：ls" class="headerlink" title="显示目录文件命令：ls"></a>显示目录文件命令：ls</h3><p>例子待定</p>
-<h3 id="创建目录命令：mkdir"><a href="#创建目录命令：mkdir" class="headerlink" title="创建目录命令：mkdir"></a>创建目录命令：mkdir</h3><p>例子待定</p>
-<h3 id="切换目录命令：cd"><a href="#切换目录命令：cd" class="headerlink" title="切换目录命令：cd"></a>切换目录命令：cd</h3><p>例子待定</p>
-<h3 id="显示当前目录命令：pwd"><a href="#显示当前目录命令：pwd" class="headerlink" title="显示当前目录命令：pwd"></a>显示当前目录命令：pwd</h3><p>例子待定</p>
-<h3 id="删除空目录命令：rmdir"><a href="#删除空目录命令：rmdir" class="headerlink" title="删除空目录命令：rmdir"></a>删除空目录命令：rmdir</h3><p>例子待定</p>
-<h3 id="复制文件或目录命令：cp"><a href="#复制文件或目录命令：cp" class="headerlink" title="复制文件或目录命令：cp"></a>复制文件或目录命令：cp</h3><p>例子待定</p>
-<h3 id="剪切文件或目录命令：mv"><a href="#剪切文件或目录命令：mv" class="headerlink" title="剪切文件或目录命令：mv"></a>剪切文件或目录命令：mv</h3><p>例子待定</p>
-<h3 id="删除文件或目录命令：rm"><a href="#删除文件或目录命令：rm" class="headerlink" title="删除文件或目录命令：rm"></a>删除文件或目录命令：rm</h3><p>例子待定</p>
+<h3 id="显示目录文件命令：ls"><a href="#显示目录文件命令：ls" class="headerlink" title="显示目录文件命令：ls"></a>显示目录文件命令：ls</h3><p>ls常用选项如下：</p>
+<ul>
+<li>-a显示所有文件，包括隐藏文件</li>
+<li>-l详细信息显示</li>
+<li>-d仅显示目录名，而不是显示目录下的内容列表</li>
+<li>-h人性化显示</li>
+<li>-t用文件和目录的更改时间排序</li>
+</ul>
+<p><img src="/images/ls.png" alt="ls命令" title="ls"></p>
+<h3 id="创建目录命令：mkdir"><a href="#创建目录命令：mkdir" class="headerlink" title="创建目录命令：mkdir"></a>创建目录命令：mkdir</h3><p>mkdir常用选项如下：<br>-p递归创建<br>注意：</p>
+<ul>
+<li>创建的目录已经存在, 那么 Linux 会提示我们 Linux 无法创建它。</li>
+<li>不带任何参数运行 mkdir 命令会在当前目录下创建目录。</li>
+<li>不带上-p,如果新建的文件上级目录不存在则不会执行成功这种说法是错误的。加或者不加上-p前面的目录没有得都会依次创建。</li>
+<li>创建目录的首要条件是， 在想要创建目录的目标路径下你必须具有访问权限。</li>
+</ul>
+<p><img src="/images/mkdir.png" alt="mkdir命令" title="mkdir"></p>
+<h3 id="切换目录命令：cd"><a href="#切换目录命令：cd" class="headerlink" title="切换目录命令：cd"></a>切换目录命令：cd</h3><p>例子：</p>
+<ul>
+<li>切换到指定目录：cd /tmp/vae</li>
+<li>回到上一级目录：cd ..</li>
+<li>还是在当前目录：cd .</li>
+<li>返回上两级目录：cd ../..</li>
+<li>返回进入此目录之前所在的目录：cd -</li>
+</ul>
+<p><img src="/images/cd.png" alt="cd命令" title="cd"></p>
+<h3 id="显示当前目录命令：pwd"><a href="#显示当前目录命令：pwd" class="headerlink" title="显示当前目录命令：pwd"></a>显示当前目录命令：pwd</h3><h3 id="删除空目录命令：rmdir"><a href="#删除空目录命令：rmdir" class="headerlink" title="删除空目录命令：rmdir"></a>删除空目录命令：rmdir</h3><h3 id="复制文件或目录命令：cp"><a href="#复制文件或目录命令：cp" class="headerlink" title="复制文件或目录命令：cp"></a>复制文件或目录命令：cp</h3><p>cp常用选项如下：</p>
+<ul>
+<li>-r复制目录</li>
+<li>-p保留文件属性</li>
+</ul>
+<p>还可同时复制多个文件，注意复制目录的时候要加 -r选项。加-p属性之后会将原文件的一些属性比如修改时间等也原封不动的复制过去。如果不加-p属性，那么复制后的文件修改时间为当前系统时间。</p>
+<p><img src="/images/cp.png" alt="cp命令" title="cp"></p>
+<h3 id="剪切文件或目录命令：mv"><a href="#剪切文件或目录命令：mv" class="headerlink" title="剪切文件或目录命令：mv"></a>剪切文件或目录命令：mv</h3><p><img src="/images/mv.png" alt="mv命令" title="mv"></p>
+<h3 id="删除文件或目录命令：rm"><a href="#删除文件或目录命令：rm" class="headerlink" title="删除文件或目录命令：rm"></a>删除文件或目录命令：rm</h3><p>rm常用选项如下：</p>
+<ul>
+<li>-r删除目录</li>
+<li>-f强制执行</li>
+</ul>
+<p><img src="/images/rm.png" alt="rm命令" title="rm"></p>
 <h2 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h2><table>
 <thead>
 <tr>
@@ -612,13 +653,27 @@
 </tr>
 </tbody>
 </table>
-<h3 id="创建空文件命令：touch"><a href="#创建空文件命令：touch" class="headerlink" title="创建空文件命令：touch"></a>创建空文件命令：touch</h3><p>例子待定</p>
-<h3 id="显示文件内容命令（适合内容较少的文件）：cat"><a href="#显示文件内容命令（适合内容较少的文件）：cat" class="headerlink" title="显示文件内容命令（适合内容较少的文件）：cat"></a>显示文件内容命令（适合内容较少的文件）：cat</h3><p>例子待定</p>
-<h3 id="反向显示文件内容命令（适合内容较少的文件）：tac"><a href="#反向显示文件内容命令（适合内容较少的文件）：tac" class="headerlink" title="反向显示文件内容命令（适合内容较少的文件）：tac"></a>反向显示文件内容命令（适合内容较少的文件）：tac</h3><p>例子待定</p>
-<h3 id="分页显示文件内容命令（不能向前翻页）：more"><a href="#分页显示文件内容命令（不能向前翻页）：more" class="headerlink" title="分页显示文件内容命令（不能向前翻页）：more"></a>分页显示文件内容命令（不能向前翻页）：more</h3><p>例子待定</p>
-<h3 id="分页显示文件内容命令（可以前后翻页）：less"><a href="#分页显示文件内容命令（可以前后翻页）：less" class="headerlink" title="分页显示文件内容命令（可以前后翻页）：less"></a>分页显示文件内容命令（可以前后翻页）：less</h3><p>例子待定</p>
-<h3 id="显示文件内容命令（指定行数）：head"><a href="#显示文件内容命令（指定行数）：head" class="headerlink" title="显示文件内容命令（指定行数）：head"></a>显示文件内容命令（指定行数）：head</h3><p>例子待定</p>
-<h3 id="反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail"><a href="#反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail" class="headerlink" title="反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail"></a>反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail</h3><p>例子待定</p>
+<h3 id="创建空文件命令：touch"><a href="#创建空文件命令：touch" class="headerlink" title="创建空文件命令：touch"></a>创建空文件命令：touch</h3><h3 id="显示文件内容命令（适合内容较少的文件）：cat"><a href="#显示文件内容命令（适合内容较少的文件）：cat" class="headerlink" title="显示文件内容命令（适合内容较少的文件）：cat"></a>显示文件内容命令（适合内容较少的文件）：cat</h3><p>cat常用选项如下：-n显示文件行号</p>
+<p><img src="/images/cat.png" alt="cat命令" title="cat"></p>
+<h3 id="反向显示文件内容命令（适合内容较少的文件）：tac"><a href="#反向显示文件内容命令（适合内容较少的文件）：tac" class="headerlink" title="反向显示文件内容命令（适合内容较少的文件）：tac"></a>反向显示文件内容命令（适合内容较少的文件）：tac</h3><h3 id="分页显示文件内容命令（不能向前翻页）：more"><a href="#分页显示文件内容命令（不能向前翻页）：more" class="headerlink" title="分页显示文件内容命令（不能向前翻页）：more"></a>分页显示文件内容命令（不能向前翻页）：more</h3><ul>
+<li>空格或f翻页（一页一页的往后显示）</li>
+<li>Enter换行（一行一行的往后显示）</li>
+<li>q或Q退出</li>
+</ul>
+<h3 id="分页显示文件内容命令（可以前后翻页）：less"><a href="#分页显示文件内容命令（可以前后翻页）：less" class="headerlink" title="分页显示文件内容命令（可以前后翻页）：less"></a>分页显示文件内容命令（可以前后翻页）：less</h3><ul>
+<li>空格或f或PgDn翻页（一页一页的往后显示）</li>
+<li>PgUp向前翻页</li>
+<li>Enter换行或向下的箭头（一行一行的往后显示）</li>
+<li>向上的箭头（一行一行的往前显示）</li>
+<li>q或Q退出</li>
+<li>输入/想搜索的字符，然后回车键</li>
+</ul>
+<h3 id="显示文件内容命令（指定行数）：head"><a href="#显示文件内容命令（指定行数）：head" class="headerlink" title="显示文件内容命令（指定行数）：head"></a>显示文件内容命令（指定行数）：head</h3><h3 id="反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail"><a href="#反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail" class="headerlink" title="反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail"></a>反向文件内容命令（文件即时更新后也能动态显示，多用于日志文件显示）：tail</h3><p>tail常用选项如下：</p>
+<ul>
+<li>-n指定显示的行数</li>
+<li>-f动态显示文件末尾内容</li>
+</ul>
+<p><img src="/images/tail.png" alt="tail命令" title="tail"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇博客我们主要讲解了Linux系统中的文件和目录处理命令，显示目录文件信息 ls 这是我们最常用的，然后创建目录命令 mkdir,切换目录命令 cd，显示当前目录 pwd，删除空目录命令 rmdir，这个命令用的不多，如果我们想删除目录可以用 rm 命令，注意 rm 如果加上 -f 参数，那将没有提示，直接将文件从系统中删除，需要特别注意，以免删除系统文件。然后我们接着介绍了复制文件或目录命令 cp，剪切文件或目录命令 mv，注意mv命令在剪切后可以直接更改文件或目录名称。</p>
 <p>接着我们介绍了几个文件处理命令，创建空文件 touch,显示文件内容的命令有很多，我们也不需要记住那么多，首先less命令能显现文件内容比较多的文件，而且能前后翻页显示。再就是如果我们需要动态监视文件内容的变化，比如某个日志文件，我们可以通过 tail 加上-f参数动态显示文件末尾的内容。</p>
 <p>参考链接：<a href="https://www.cnblogs.com/ysocean/p/7712412.html" target="_blank" rel="noopener">Linux常用命令之文件和目录处理命令</a></p>
@@ -652,7 +707,7 @@
   <p><span>本文标题:</span><a href="/2019/05/30/blog20190530/">Linux常用命令之文件和目录处理命令</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
   <p><span>发布时间:</span>2019年05月30日 - 16:05</p>
-  <p><span>最后更新:</span>2019年05月31日 - 15:05</p>
+  <p><span>最后更新:</span>2019年06月10日 - 14:06</p>
   <p><span>原始链接:</span><a href="/2019/05/30/blog20190530/" title="Linux常用命令之文件和目录处理命令">https://jsxzswz.github.io/2019/05/30/blog20190530/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/05/30/blog20190530/" aria-label="复制成功！"></i></span>
   </p>
@@ -973,7 +1028,7 @@
     
       <span class="post-meta-item-text">全站字数&#58;</span>
     
-    <span title="全站字数">32.3k</span>
+    <span title="全站字数">32.9k</span>
   
 </div>
 

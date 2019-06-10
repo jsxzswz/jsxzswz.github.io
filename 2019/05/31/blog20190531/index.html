@@ -120,10 +120,13 @@
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。本文介绍了几种文件搜索命令！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-31T07:30:14.385Z">
+<meta property="og:image" content="https://jsxzswz.github.io/images/rm.find">
+<meta property="og:image" content="https://jsxzswz.github.io/images/rm.grep">
+<meta property="og:updated_time" content="2019-06-10T05:52:37.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令之文件搜索命令">
 <meta name="twitter:description" content="前言对于开发人员来说，基础的Linux命令还是有必要了解一下的，尤其是一些基础的查找和操作目录文件的命令我们尤其需要掌握。学习命令，首先要跟大家纠正的一点就是，我们不需要记住每一条命令的详细语法格式，学完之后我们只需要知道某个命令能干什么。这样我们在实际应用中，遇到需要实现某个功能，我们脑海只要能想起来适用于某个命令就行，至于详细格式我们可以通过查资料。本文介绍了几种文件搜索命令！">
+<meta name="twitter:image" content="https://jsxzswz.github.io/images/rm.find">
 
 
 
@@ -434,7 +437,7 @@
                   <span class="post-meta-item-text">本文字数&#58;</span>
                 
                 <span title="本文字数">
-                  788
+                  948
                 </span>
               
 
@@ -450,7 +453,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -521,16 +524,22 @@
 </tr>
 </tbody>
 </table>
-<h2 id="最强大的搜索命令：find"><a href="#最强大的搜索命令：find" class="headerlink" title="最强大的搜索命令：find"></a>最强大的搜索命令：find</h2><h3 id="根据-文件或目录名称-搜索"><a href="#根据-文件或目录名称-搜索" class="headerlink" title="根据 文件或目录名称 搜索"></a>根据 文件或目录名称 搜索</h3><p>例子待定</p>
-<h3 id="根据-文件大小-搜索"><a href="#根据-文件大小-搜索" class="headerlink" title="根据 文件大小 搜索"></a>根据 文件大小 搜索</h3><p>例子待定</p>
-<h3 id="根据-所有者和所属组-搜索"><a href="#根据-所有者和所属组-搜索" class="headerlink" title="根据 所有者和所属组 搜索"></a>根据 所有者和所属组 搜索</h3><p>例子待定</p>
-<h3 id="根据-时间属性-搜索"><a href="#根据-时间属性-搜索" class="headerlink" title="根据 时间属性 搜索"></a>根据 时间属性 搜索</h3><p>例子待定</p>
-<h3 id="根据-文件类型或i节点-搜索"><a href="#根据-文件类型或i节点-搜索" class="headerlink" title="根据 文件类型或i节点 搜索"></a>根据 文件类型或i节点 搜索</h3><p>例子待定</p>
-<h3 id="组合条件-搜索"><a href="#组合条件-搜索" class="headerlink" title="组合条件 搜索"></a>组合条件 搜索</h3><p>例子待定</p>
-<h2 id="在文件资料库中查找文件命令：locate"><a href="#在文件资料库中查找文件命令：locate" class="headerlink" title="在文件资料库中查找文件命令：locate"></a>在文件资料库中查找文件命令：locate</h2><p>例子待定</p>
-<h2 id="搜索命令所在的目录及别名信息：which"><a href="#搜索命令所在的目录及别名信息：which" class="headerlink" title="搜索命令所在的目录及别名信息：which"></a>搜索命令所在的目录及别名信息：which</h2><p>例子待定</p>
-<h2 id="搜索命令所在的目录及帮助文档路径：whereis"><a href="#搜索命令所在的目录及帮助文档路径：whereis" class="headerlink" title="搜索命令所在的目录及帮助文档路径：whereis"></a>搜索命令所在的目录及帮助文档路径：whereis</h2><p>例子待定</p>
-<h2 id="在文件中搜寻字符串匹配的行并输出：grep"><a href="#在文件中搜寻字符串匹配的行并输出：grep" class="headerlink" title="在文件中搜寻字符串匹配的行并输出：grep"></a>在文件中搜寻字符串匹配的行并输出：grep</h2><p>例子待定</p>
+<h2 id="最强大的搜索命令：find"><a href="#最强大的搜索命令：find" class="headerlink" title="最强大的搜索命令：find"></a>最强大的搜索命令：find</h2><p>find常用选项如下：</p>
+<ul>
+<li>-iname根据文件或目录名称搜索,不区分大小写</li>
+<li>-size据文件大小搜索(+n表示大于，-n表示小于，n表示等于;1数据块=512字节=0.5KB，也就是1KB等于2数据块)</li>
+<li>-group;-user根据所有者和所属组搜索</li>
+<li>根据时间属性搜索(-amin访问时间;-cmin文件属性被更改;-mmin文件内容被修改,+n,-n,n分别表示超过n分钟，n分钟以内和n分钟)</li>
+<li>-type根据文件类型查找(f表示文件，d表示目录，l表示软链接)</li>
+<li>组合条件 搜索(-a表示两个条件同时满足and;-o表示两个条件满足任意一个即可or)</li>
+</ul>
+<p><img src="/images/rm.find" alt="find命令" title="find"></p>
+<h3 id="根据-文件或目录名称-搜索"><a href="#根据-文件或目录名称-搜索" class="headerlink" title="根据 文件或目录名称 搜索"></a>根据 文件或目录名称 搜索</h3><h3 id="根据-文件大小-搜索"><a href="#根据-文件大小-搜索" class="headerlink" title="根据 文件大小 搜索"></a>根据 文件大小 搜索</h3><h3 id="根据-所有者和所属组-搜索"><a href="#根据-所有者和所属组-搜索" class="headerlink" title="根据 所有者和所属组 搜索"></a>根据 所有者和所属组 搜索</h3><h3 id="根据-时间属性-搜索"><a href="#根据-时间属性-搜索" class="headerlink" title="根据 时间属性 搜索"></a>根据 时间属性 搜索</h3><h3 id="根据-文件类型搜索"><a href="#根据-文件类型搜索" class="headerlink" title="根据 文件类型搜索"></a>根据 文件类型搜索</h3><h3 id="组合条件-搜索"><a href="#组合条件-搜索" class="headerlink" title="组合条件 搜索"></a>组合条件 搜索</h3><h2 id="在文件资料库中查找文件命令：locate"><a href="#在文件资料库中查找文件命令：locate" class="headerlink" title="在文件资料库中查找文件命令：locate"></a>在文件资料库中查找文件命令：locate</h2><h2 id="搜索命令所在的目录及别名信息：which"><a href="#搜索命令所在的目录及别名信息：which" class="headerlink" title="搜索命令所在的目录及别名信息：which"></a>搜索命令所在的目录及别名信息：which</h2><h2 id="搜索命令所在的目录及帮助文档路径：whereis"><a href="#搜索命令所在的目录及帮助文档路径：whereis" class="headerlink" title="搜索命令所在的目录及帮助文档路径：whereis"></a>搜索命令所在的目录及帮助文档路径：whereis</h2><h2 id="在文件中搜寻字符串匹配的行并输出：grep"><a href="#在文件中搜寻字符串匹配的行并输出：grep" class="headerlink" title="在文件中搜寻字符串匹配的行并输出：grep"></a>在文件中搜寻字符串匹配的行并输出：grep</h2><p>grep常用选项如下：</p>
+<ul>
+<li>-i不区分大小写</li>
+<li>-v排除指定字符串</li>
+</ul>
+<p><img src="/images/rm.grep" alt="grep命令" title="grep"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇博客我们介绍了几种文件搜索命令，其中find是用的最多的也是功能最强大的文件或目录搜索命令，和另一个搜索命令locate的区别是，find命令是全盘搜索，刚创建的文件也能搜索的到，而locate是在文件资料库中进行搜索，对比find命令搜索速度快很多，但是新创建的文件如果没有收录到文件资料库中，使用locate命令是搜索不到的，再就是/tmp目录是不收录到文件资料库的，也就是说使用locate命令搜索不到在/tmp目录下的文件。</p>
 <p>然后我们介绍搜索命令所在的目录以及别名信息which，搜索命令所在的目录以及帮助文档路径whereis，最后一个命令grep和前面搜索文件或目录命令是不同的，grep是在文件中搜索匹配的字符串，是在文件中进行内容搜索，这个命令后面用到的比较多，大家需要记住用法。</p>
 <p>参考链接：<a href="https://www.cnblogs.com/ysocean/p/7712417.html" target="_blank" rel="noopener">Linux常用命令之文件搜索命令</a></p>
@@ -564,7 +573,7 @@
   <p><span>本文标题:</span><a href="/2019/05/31/blog20190531/">Linux常用命令之文件搜索命令</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
   <p><span>发布时间:</span>2019年05月31日 - 14:05</p>
-  <p><span>最后更新:</span>2019年05月31日 - 15:05</p>
+  <p><span>最后更新:</span>2019年06月10日 - 13:06</p>
   <p><span>原始链接:</span><a href="/2019/05/31/blog20190531/" title="Linux常用命令之文件搜索命令">https://jsxzswz.github.io/2019/05/31/blog20190531/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/05/31/blog20190531/" aria-label="复制成功！"></i></span>
   </p>
@@ -847,7 +856,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件搜索命令"><span class="nav-number">2.</span> <span class="nav-text">文件搜索命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最强大的搜索命令：find"><span class="nav-number">3.</span> <span class="nav-text">最强大的搜索命令：find</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-文件或目录名称-搜索"><span class="nav-number">3.1.</span> <span class="nav-text">根据 文件或目录名称 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-文件大小-搜索"><span class="nav-number">3.2.</span> <span class="nav-text">根据 文件大小 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-所有者和所属组-搜索"><span class="nav-number">3.3.</span> <span class="nav-text">根据 所有者和所属组 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-时间属性-搜索"><span class="nav-number">3.4.</span> <span class="nav-text">根据 时间属性 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-文件类型或i节点-搜索"><span class="nav-number">3.5.</span> <span class="nav-text">根据 文件类型或i节点 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合条件-搜索"><span class="nav-number">3.6.</span> <span class="nav-text">组合条件 搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在文件资料库中查找文件命令：locate"><span class="nav-number">4.</span> <span class="nav-text">在文件资料库中查找文件命令：locate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索命令所在的目录及别名信息：which"><span class="nav-number">5.</span> <span class="nav-text">搜索命令所在的目录及别名信息：which</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索命令所在的目录及帮助文档路径：whereis"><span class="nav-number">6.</span> <span class="nav-text">搜索命令所在的目录及帮助文档路径：whereis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在文件中搜寻字符串匹配的行并输出：grep"><span class="nav-number">7.</span> <span class="nav-text">在文件中搜寻字符串匹配的行并输出：grep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件搜索命令"><span class="nav-number">2.</span> <span class="nav-text">文件搜索命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最强大的搜索命令：find"><span class="nav-number">3.</span> <span class="nav-text">最强大的搜索命令：find</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-文件或目录名称-搜索"><span class="nav-number">3.1.</span> <span class="nav-text">根据 文件或目录名称 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-文件大小-搜索"><span class="nav-number">3.2.</span> <span class="nav-text">根据 文件大小 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-所有者和所属组-搜索"><span class="nav-number">3.3.</span> <span class="nav-text">根据 所有者和所属组 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-时间属性-搜索"><span class="nav-number">3.4.</span> <span class="nav-text">根据 时间属性 搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据-文件类型搜索"><span class="nav-number">3.5.</span> <span class="nav-text">根据 文件类型搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合条件-搜索"><span class="nav-number">3.6.</span> <span class="nav-text">组合条件 搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在文件资料库中查找文件命令：locate"><span class="nav-number">4.</span> <span class="nav-text">在文件资料库中查找文件命令：locate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索命令所在的目录及别名信息：which"><span class="nav-number">5.</span> <span class="nav-text">搜索命令所在的目录及别名信息：which</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索命令所在的目录及帮助文档路径：whereis"><span class="nav-number">6.</span> <span class="nav-text">搜索命令所在的目录及帮助文档路径：whereis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在文件中搜寻字符串匹配的行并输出：grep"><span class="nav-number">7.</span> <span class="nav-text">在文件中搜寻字符串匹配的行并输出：grep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -881,7 +890,7 @@
     
       <span class="post-meta-item-text">全站字数&#58;</span>
     
-    <span title="全站字数">32.3k</span>
+    <span title="全站字数">32.9k</span>
   
 </div>
 
