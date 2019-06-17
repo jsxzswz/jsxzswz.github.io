@@ -121,7 +121,7 @@
 <meta property="og:description" content="前言谈到SpringCloud最新接触到的可能就是那五大”神兽”,之前最先接触分布式开发是通过dubbo的RPC远程过程调用，而dubbo给我得感觉就是：虽然所有的主机物理上分布了，但是对于用户而言就仿佛是一个整体。而对我们的java开发人员而言，分布式开发的意义又是什么呢？也就是说哪里需要去使用分布式开发呢，其实在任何一个项目里面（MVC设计模式），业务操作是最为核心的部分，而所有项目之中你的业">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://jsxzswz.github.io/images/springCloud.png">
-<meta property="og:updated_time" content="2019-04-29T06:11:21.158Z">
+<meta property="og:updated_time" content="2019-06-17T07:52:24.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud分布式开发理解">
 <meta name="twitter:description" content="前言谈到SpringCloud最新接触到的可能就是那五大”神兽”,之前最先接触分布式开发是通过dubbo的RPC远程过程调用，而dubbo给我得感觉就是：虽然所有的主机物理上分布了，但是对于用户而言就仿佛是一个整体。而对我们的java开发人员而言，分布式开发的意义又是什么呢？也就是说哪里需要去使用分布式开发呢，其实在任何一个项目里面（MVC设计模式），业务操作是最为核心的部分，而所有项目之中你的业">
@@ -491,7 +491,7 @@
 </ul>
 <p>注册中心服务器:</p>
 <p>依赖：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency```&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <p>配置application.yml：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8011</span><br><span class="line"># 默认情况下erureka server也是一个eureka client ,必须要指定一个 server。eureka server的配置文件appication.yml 通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.</span><br><span class="line">eureka:</span><br><span class="line">  instance:</span><br><span class="line">    hostname: localhost</span><br><span class="line">  client:</span><br><span class="line">    register-with-eureka: false</span><br><span class="line">    fetch-registry: false</span><br><span class="line">    service-url:</span><br><span class="line">      defaultZone: http://$&#123;eureka.instance.hostname&#125;:$&#123;server.port&#125;/eureka/</span><br><span class="line"></span><br><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: eureka-server</span><br></pre></td></tr></table></figure>
 <p>注解：</p>
@@ -620,7 +620,7 @@
   <p><span>本文标题:</span><a href="/2019/04/29/blog20190429/">SpringCloud分布式开发理解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
   <p><span>发布时间:</span>2019年04月29日 - 09:04</p>
-  <p><span>最后更新:</span>2019年04月29日 - 14:04</p>
+  <p><span>最后更新:</span>2019年06月17日 - 15:06</p>
   <p><span>原始链接:</span><a href="/2019/04/29/blog20190429/" title="SpringCloud分布式开发理解">https://jsxzswz.github.io/2019/04/29/blog20190429/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/04/29/blog20190429/" aria-label="复制成功！"></i></span>
   </p>

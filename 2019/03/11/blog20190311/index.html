@@ -99,7 +99,7 @@
 
 
 
-  <meta name="keywords" content="java,线程,线程池,">
+  <meta name="keywords" content="线程,线程池,java,">
 
 
 
@@ -113,14 +113,14 @@
 
 
 <meta name="description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
-<meta name="keywords" content="java,线程,线程池">
+<meta name="keywords" content="线程,线程池,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java线程及线程池介绍">
 <meta property="og:url" content="https://jsxzswz.github.io/2019/03/11/blog20190311/index.html">
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-11T07:21:04.838Z">
+<meta property="og:updated_time" content="2019-06-17T08:02:08.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java线程及线程池介绍">
 <meta name="twitter:description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
@@ -501,18 +501,18 @@
 <h2 id="java中的线程池（ThreadPoolExecutor）"><a href="#java中的线程池（ThreadPoolExecutor）" class="headerlink" title="java中的线程池（ThreadPoolExecutor）"></a>java中的线程池（ThreadPoolExecutor）</h2><h3 id="为什么要引入线程池"><a href="#为什么要引入线程池" class="headerlink" title="为什么要引入线程池"></a>为什么要引入线程池</h3><p>当我们需要的并发执行线程数量很多时，且每个线程执行很短的时间就结束了，这样，我们频繁的创建、销毁线程就大大降低了工作效率（创建和销毁线程需要时间、资源）。<br>java中的线程池可以达到这样的效果：一个线程执行完任务之后，继续去执行下一个任务，不被销毁，这样线程利用率提高</p>
 <h3 id="java线程池各参数介绍"><a href="#java线程池各参数介绍" class="headerlink" title="java线程池各参数介绍"></a>java线程池各参数介绍</h3><p>java.util.concurrent.ThreadPoolExecutor。ThreadPoolExecutor类是java线程池中的核心类。他的实现方式有四种：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">public class ThreadPoolExecutor extends AbstractExecutorService &#123;</span><br><span class="line">　　public ThreadPoolExecutor(int corePoolSize,</span><br><span class="line">　　　　int maximumPoolSize,</span><br><span class="line">　　　　long keepAliveTime,</span><br><span class="line">　　　　TimeUnit unit,</span><br><span class="line">　　　　BlockingQueue&lt;Runnable&gt; workQueue) &#123;</span><br><span class="line">　　　　this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,</span><br><span class="line">　　　　Executors.defaultThreadFactory(), defaultHandler);</span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　public ThreadPoolExecutor(int corePoolSize,</span><br><span class="line">　　　　int maximumPoolSize,</span><br><span class="line">　　　　long keepAliveTime,</span><br><span class="line">　　　　TimeUnit unit,</span><br><span class="line">　　　　BlockingQueue&lt;Runnable&gt; workQueue,</span><br><span class="line">　　　　ThreadFactory threadFactory) &#123;</span><br><span class="line">　　　　this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,</span><br><span class="line">　　　　threadFactory, defaultHandler);</span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　public ThreadPoolExecutor(int corePoolSize,</span><br><span class="line">　　　　int maximumPoolSize,</span><br><span class="line">　　　　long keepAliveTime,</span><br><span class="line">　　　　TimeUnit unit,</span><br><span class="line">　　　　BlockingQueue&lt;Runnable&gt; workQueue,</span><br><span class="line">　　　　RejectedExecutionHandler handler) &#123;</span><br><span class="line">　　　　this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,</span><br><span class="line">　　　　Executors.defaultThreadFactory(), handler);</span><br><span class="line">　　&#125;</span><br><span class="line"></span><br><span class="line">　　public ThreadPoolExecutor(int corePoolSize,</span><br><span class="line">　　　　int maximumPoolSize,</span><br><span class="line">　　　　long keepAliveTime,</span><br><span class="line">　　　　TimeUnit unit,</span><br><span class="line">　　　　BlockingQueue&lt;Runnable&gt; workQueue,</span><br><span class="line">　　　　ThreadFactory threadFactory,</span><br><span class="line">　　　　RejectedExecutionHandler handler) &#123;</span><br><span class="line">　　　　if (corePoolSize &lt; 0 ||</span><br><span class="line">　　　　　　maximumPoolSize &lt;= 0 ||</span><br><span class="line">　　　　　　maximumPoolSize &lt; corePoolSize ||</span><br><span class="line">　　　　　　keepAliveTime &lt; 0)</span><br><span class="line">　　　　　　throw new IllegalArgumentException();</span><br><span class="line">　　　　if (workQueue == null || threadFactory == null || handler == null)</span><br><span class="line">　　　　　　throw new NullPointerException();</span><br><span class="line">　　　　this.corePoolSize = corePoolSize;</span><br><span class="line">　　　　this.maximumPoolSize = maximumPoolSize;</span><br><span class="line">　　　　this.workQueue = workQueue;</span><br><span class="line">　　　　this.keepAliveTime = unit.toNanos(keepAliveTime);</span><br><span class="line">　　　　this.threadFactory = threadFactory;</span><br><span class="line">　　　　this.handler = handler;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过ThreadPoolExecutor类的源码可以看出，ThreadPoolExecutor类继承AbstractExecutorService，提供四个构造方法。<br>下面介绍下构造方法中的参数：</p>
+<p>通过ThreadPoolExecutor类的源码可以看出，提供四个构造方法,下面介绍下构造方法中的参数：</p>
 <ul>
 <li>corePoolSize：线程池的大小。线程池创建之后不会立即去创建线程，而是等待线程的到来。若当前执行的线程数大于改值是，线程会加入到缓冲队列</li>
 <li>maximumPoolSize：线程池中创建的最大线程数</li>
 <li>keepAliveTime：空闲的线程多久时间后被销毁。默认情况下，改值在线程数大于corePoolSize时，对超出corePoolSize值得这些线程起作用</li>
 <li>unit：TimeUnit枚举类型的值，代表keepAliveTime时间单位</li>
-<li>workQueue：阻塞队列，用来存储等待执行的任务，决定了线程池的排队策略<br>　<em> ArrayBlockingQueue
-　</em> LinkedBlockingQueue<br>　<em> SynchronousQueue
-　</em> threadFactory：线程工厂，是用来创建线程的。默认new Executors.DefaultThreadFactory()</li>
+<li>workQueue：阻塞队列，用来存储等待执行的任务，决定了线程池的排队策略<ul>
+<li>ArrayBlockingQueue<br>　+ LinkedBlockingQueue<br>　+ SynchronousQueue<br>　+ threadFactory：线程工厂，是用来创建线程的。默认new Executors.DefaultThreadFactory()</li>
+</ul>
+</li>
 <li>handler:线程拒绝策略。当创建的线程超出maximumPoolSize，且缓冲队列已满时，新任务会拒绝<ul>
-<li>ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常<br>　<em> ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常
-　</em> ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）<br>　* ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务</li>
+<li>ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常<br>　+ ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常<br>　+ ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）<br>　+ ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务</li>
 </ul>
 </li>
 </ul>
@@ -639,7 +639,7 @@
   <p><span>本文标题:</span><a href="/2019/03/11/blog20190311/">java线程及线程池介绍</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 孙文正 的个人博客">孙文正</a></p>
   <p><span>发布时间:</span>2019年03月11日 - 14:03</p>
-  <p><span>最后更新:</span>2019年03月11日 - 15:03</p>
+  <p><span>最后更新:</span>2019年06月17日 - 16:06</p>
   <p><span>原始链接:</span><a href="/2019/03/11/blog20190311/" title="java线程及线程池介绍">https://jsxzswz.github.io/2019/03/11/blog20190311/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://jsxzswz.github.io/2019/03/11/blog20190311/" aria-label="复制成功！"></i></span>
   </p>
@@ -701,11 +701,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
-          
             <a href="/tags/线程/" rel="tag"><i class="fa fa-tag"></i> 线程</a>
           
             <a href="/tags/线程池/" rel="tag"><i class="fa fa-tag"></i> 线程池</a>
+          
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
         </div>
       
