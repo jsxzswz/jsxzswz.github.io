@@ -99,7 +99,7 @@
 
 
 
-  <meta name="keywords" content="线程,线程池,java,">
+  <meta name="keywords" content="java,线程,线程池,">
 
 
 
@@ -113,14 +113,14 @@
 
 
 <meta name="description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
-<meta name="keywords" content="线程,线程池,java">
+<meta name="keywords" content="java,线程,线程池">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java线程及线程池介绍">
 <meta property="og:url" content="https://jsxzswz.github.io/2019/03/11/blog20190311/index.html">
 <meta property="og:site_name" content="孙文正的Blog">
 <meta property="og:description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-17T08:02:08.664Z">
+<meta property="og:updated_time" content="2019-06-17T08:50:06.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java线程及线程池介绍">
 <meta name="twitter:description" content="前言如果不考虑多线程的话，那么在程序只有一条执行路径，代码串行执行：顺序执行、选择或者循环；如果使用多线程，就可以把一些大任务分解成多个小任务来执行，多个小任务之间互不影响，同时进行，充分利用了cpu资源。">
@@ -508,11 +508,15 @@
 <li>keepAliveTime：空闲的线程多久时间后被销毁。默认情况下，改值在线程数大于corePoolSize时，对超出corePoolSize值得这些线程起作用</li>
 <li>unit：TimeUnit枚举类型的值，代表keepAliveTime时间单位</li>
 <li>workQueue：阻塞队列，用来存储等待执行的任务，决定了线程池的排队策略<ul>
-<li>ArrayBlockingQueue<br>　+ LinkedBlockingQueue<br>　+ SynchronousQueue<br>　+ threadFactory：线程工厂，是用来创建线程的。默认new Executors.DefaultThreadFactory()</li>
+<li>ArrayBlockingQueue</li>
+<li>LinkedBlockingQueue</li>
+<li>SynchronousQueue</li>
+<li>threadFactory：线程工厂，是用来创建线程的</li>
 </ul>
 </li>
 <li>handler:线程拒绝策略。当创建的线程超出maximumPoolSize，且缓冲队列已满时，新任务会拒绝<ul>
-<li>ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常<br>　+ ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常<br>　+ ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）<br>　+ ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务</li>
+<li>ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常<br>　<em> ThreadPoolExecutor.DiscardPolicy：也是丢弃任务，但是不抛出异常
+　</em> ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新尝试执行任务（重复此过程）<br>　* ThreadPoolExecutor.CallerRunsPolicy：由调用线程处理该任务</li>
 </ul>
 </li>
 </ul>
@@ -701,11 +705,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
+          
             <a href="/tags/线程/" rel="tag"><i class="fa fa-tag"></i> 线程</a>
           
             <a href="/tags/线程池/" rel="tag"><i class="fa fa-tag"></i> 线程池</a>
-          
-            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
         </div>
       
